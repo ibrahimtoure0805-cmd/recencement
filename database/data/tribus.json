@@ -1,0 +1,1118 @@
+[
+  {
+    "nom": "Tribu Ahaly-Nord",
+    "canton_nom": "Ahaly"
+  },
+  {
+    "nom": "Tribu Ahaly-Sud",
+    "canton_nom": "Ahaly"
+  },
+  {
+    "nom": "Tribu Ahaly-Central",
+    "canton_nom": "Ahaly"
+  },
+  {
+    "nom": "Tribu Faafouè-Nord",
+    "canton_nom": "Faafouè"
+  },
+  {
+    "nom": "Tribu Faafouè-Sud",
+    "canton_nom": "Faafouè"
+  },
+  {
+    "nom": "Tribu Faafouè-Central",
+    "canton_nom": "Faafouè"
+  },
+  {
+    "nom": "Tribu Gblo-Nord",
+    "canton_nom": "Gblo"
+  },
+  {
+    "nom": "Tribu Gblo-Sud",
+    "canton_nom": "Gblo"
+  },
+  {
+    "nom": "Tribu Gblo-Central",
+    "canton_nom": "Gblo"
+  },
+  {
+    "nom": "Tribu N'Dranoua-Nord",
+    "canton_nom": "N'Dranoua"
+  },
+  {
+    "nom": "Tribu N'Dranoua-Sud",
+    "canton_nom": "N'Dranoua"
+  },
+  {
+    "nom": "Tribu N'Dranoua-Central",
+    "canton_nom": "N'Dranoua"
+  },
+  {
+    "nom": "Tribu Prepressou-Nord",
+    "canton_nom": "Prepressou"
+  },
+  {
+    "nom": "Tribu Prepressou-Sud",
+    "canton_nom": "Prepressou"
+  },
+  {
+    "nom": "Tribu Prepressou-Central",
+    "canton_nom": "Prepressou"
+  },
+  {
+    "nom": "Tribu Ayahou-Nord",
+    "canton_nom": "Ayahou"
+  },
+  {
+    "nom": "Tribu Ayahou-Sud",
+    "canton_nom": "Ayahou"
+  },
+  {
+    "nom": "Tribu Ayahou-Central",
+    "canton_nom": "Ayahou"
+  },
+  {
+    "nom": "Tribu Walèbo-Nord",
+    "canton_nom": "Walèbo"
+  },
+  {
+    "nom": "Tribu Walèbo-Sud",
+    "canton_nom": "Walèbo"
+  },
+  {
+    "nom": "Tribu Walèbo-Central",
+    "canton_nom": "Walèbo"
+  },
+  {
+    "nom": "Tribu Kode-Nord",
+    "canton_nom": "Kode"
+  },
+  {
+    "nom": "Tribu Kode-Sud",
+    "canton_nom": "Kode"
+  },
+  {
+    "nom": "Tribu Kode-Central",
+    "canton_nom": "Kode"
+  },
+  {
+    "nom": "Tribu Satama-Nord",
+    "canton_nom": "Satama"
+  },
+  {
+    "nom": "Tribu Satama-Sud",
+    "canton_nom": "Satama"
+  },
+  {
+    "nom": "Tribu Satama-Central",
+    "canton_nom": "Satama"
+  },
+  {
+    "nom": "Tribu Pharis-Nord",
+    "canton_nom": "Pharis"
+  },
+  {
+    "nom": "Tribu Pharis-Sud",
+    "canton_nom": "Pharis"
+  },
+  {
+    "nom": "Tribu Pharis-Central",
+    "canton_nom": "Pharis"
+  },
+  {
+    "nom": "Tribu Sahoua-Nord",
+    "canton_nom": "Sahoua"
+  },
+  {
+    "nom": "Tribu Sahoua-Sud",
+    "canton_nom": "Sahoua"
+  },
+  {
+    "nom": "Tribu Sahoua-Central",
+    "canton_nom": "Sahoua"
+  },
+  {
+    "nom": "Tribu Mamara-Nord",
+    "canton_nom": "Mamara"
+  },
+  {
+    "nom": "Tribu Mamara-Sud",
+    "canton_nom": "Mamara"
+  },
+  {
+    "nom": "Tribu Mamara-Central",
+    "canton_nom": "Mamara"
+  },
+  {
+    "nom": "Tribu Watara-Nord",
+    "canton_nom": "Watara"
+  },
+  {
+    "nom": "Tribu Watara-Sud",
+    "canton_nom": "Watara"
+  },
+  {
+    "nom": "Tribu Watara-Central",
+    "canton_nom": "Watara"
+  },
+  {
+    "nom": "Tribu Djamala-Nord",
+    "canton_nom": "Djamala"
+  },
+  {
+    "nom": "Tribu Djamala-Sud",
+    "canton_nom": "Djamala"
+  },
+  {
+    "nom": "Tribu Djamala-Central",
+    "canton_nom": "Djamala"
+  },
+  {
+    "nom": "Tribu Mangoro-Nord",
+    "canton_nom": "Mangoro"
+  },
+  {
+    "nom": "Tribu Mangoro-Sud",
+    "canton_nom": "Mangoro"
+  },
+  {
+    "nom": "Tribu Mangoro-Central",
+    "canton_nom": "Mangoro"
+  },
+  {
+    "nom": "Tribu Nanafouè-Nord",
+    "canton_nom": "Nanafouè"
+  },
+  {
+    "nom": "Tribu Nanafouè-Sud",
+    "canton_nom": "Nanafouè"
+  },
+  {
+    "nom": "Tribu Nanafouè-Central",
+    "canton_nom": "Nanafouè"
+  },
+  {
+    "nom": "Tribu Aïtou-Nord",
+    "canton_nom": "Aïtou"
+  },
+  {
+    "nom": "Tribu Aïtou-Sud",
+    "canton_nom": "Aïtou"
+  },
+  {
+    "nom": "Tribu Aïtou-Central",
+    "canton_nom": "Aïtou"
+  },
+  {
+    "nom": "Tribu Akouè-Nord",
+    "canton_nom": "Akouè"
+  },
+  {
+    "nom": "Tribu Akouè-Sud",
+    "canton_nom": "Akouè"
+  },
+  {
+    "nom": "Tribu Akouè-Central",
+    "canton_nom": "Akouè"
+  },
+  {
+    "nom": "Tribu N'Gban-Nord",
+    "canton_nom": "N'Gban"
+  },
+  {
+    "nom": "Tribu N'Gban-Sud",
+    "canton_nom": "N'Gban"
+  },
+  {
+    "nom": "Tribu N'Gban-Central",
+    "canton_nom": "N'Gban"
+  },
+  {
+    "nom": "Tribu Saa-Nord",
+    "canton_nom": "Saa"
+  },
+  {
+    "nom": "Tribu Saa-Sud",
+    "canton_nom": "Saa"
+  },
+  {
+    "nom": "Tribu Saa-Central",
+    "canton_nom": "Saa"
+  },
+  {
+    "nom": "Tribu Souamlin-Nord",
+    "canton_nom": "Souamlin"
+  },
+  {
+    "nom": "Tribu Souamlin-Sud",
+    "canton_nom": "Souamlin"
+  },
+  {
+    "nom": "Tribu Souamlin-Central",
+    "canton_nom": "Souamlin"
+  },
+  {
+    "nom": "Tribu Anno-Nord",
+    "canton_nom": "Anno"
+  },
+  {
+    "nom": "Tribu Anno-Sud",
+    "canton_nom": "Anno"
+  },
+  {
+    "nom": "Tribu Anno-Central",
+    "canton_nom": "Anno"
+  },
+  {
+    "nom": "Tribu Moronou-Nord",
+    "canton_nom": "Moronou"
+  },
+  {
+    "nom": "Tribu Moronou-Sud",
+    "canton_nom": "Moronou"
+  },
+  {
+    "nom": "Tribu Moronou-Central",
+    "canton_nom": "Moronou"
+  },
+  {
+    "nom": "Tribu Agba-Nord",
+    "canton_nom": "Agba"
+  },
+  {
+    "nom": "Tribu Agba-Sud",
+    "canton_nom": "Agba"
+  },
+  {
+    "nom": "Tribu Agba-Central",
+    "canton_nom": "Agba"
+  },
+  {
+    "nom": "Tribu Ahali-Dimbokro-Nord",
+    "canton_nom": "Ahali-Dimbokro"
+  },
+  {
+    "nom": "Tribu Ahali-Dimbokro-Sud",
+    "canton_nom": "Ahali-Dimbokro"
+  },
+  {
+    "nom": "Tribu Ahali-Dimbokro-Central",
+    "canton_nom": "Ahali-Dimbokro"
+  },
+  {
+    "nom": "Tribu Kirioua-Nord",
+    "canton_nom": "Kirioua"
+  },
+  {
+    "nom": "Tribu Kirioua-Sud",
+    "canton_nom": "Kirioua"
+  },
+  {
+    "nom": "Tribu Kirioua-Central",
+    "canton_nom": "Kirioua"
+  },
+  {
+    "nom": "Tribu Ehivet-Nord",
+    "canton_nom": "Ehivet"
+  },
+  {
+    "nom": "Tribu Ehivet-Sud",
+    "canton_nom": "Ehivet"
+  },
+  {
+    "nom": "Tribu Ehivet-Central",
+    "canton_nom": "Ehivet"
+  },
+  {
+    "nom": "Tribu Bougouri-Nord",
+    "canton_nom": "Bougouri"
+  },
+  {
+    "nom": "Tribu Bougouri-Sud",
+    "canton_nom": "Bougouri"
+  },
+  {
+    "nom": "Tribu Bougouri-Central",
+    "canton_nom": "Bougouri"
+  },
+  {
+    "nom": "Tribu Lossom-Nord",
+    "canton_nom": "Lossom"
+  },
+  {
+    "nom": "Tribu Lossom-Sud",
+    "canton_nom": "Lossom"
+  },
+  {
+    "nom": "Tribu Lossom-Central",
+    "canton_nom": "Lossom"
+  },
+  {
+    "nom": "Tribu Kassemble-Nord",
+    "canton_nom": "Kassemble"
+  },
+  {
+    "nom": "Tribu Kassemble-Sud",
+    "canton_nom": "Kassemble"
+  },
+  {
+    "nom": "Tribu Kassemble-Central",
+    "canton_nom": "Kassemble"
+  },
+  {
+    "nom": "Tribu Tiéma-Nord",
+    "canton_nom": "Tiéma"
+  },
+  {
+    "nom": "Tribu Tiéma-Sud",
+    "canton_nom": "Tiéma"
+  },
+  {
+    "nom": "Tribu Tiéma-Central",
+    "canton_nom": "Tiéma"
+  },
+  {
+    "nom": "Tribu Niarafolo-Nord",
+    "canton_nom": "Niarafolo"
+  },
+  {
+    "nom": "Tribu Niarafolo-Sud",
+    "canton_nom": "Niarafolo"
+  },
+  {
+    "nom": "Tribu Niarafolo-Central",
+    "canton_nom": "Niarafolo"
+  },
+  {
+    "nom": "Tribu Nafana-Nord",
+    "canton_nom": "Nafana"
+  },
+  {
+    "nom": "Tribu Nafana-Sud",
+    "canton_nom": "Nafana"
+  },
+  {
+    "nom": "Tribu Nafana-Central",
+    "canton_nom": "Nafana"
+  },
+  {
+    "nom": "Tribu Pongala-Nord",
+    "canton_nom": "Pongala"
+  },
+  {
+    "nom": "Tribu Pongala-Sud",
+    "canton_nom": "Pongala"
+  },
+  {
+    "nom": "Tribu Pongala-Central",
+    "canton_nom": "Pongala"
+  },
+  {
+    "nom": "Tribu Kiembara-Nord",
+    "canton_nom": "Kiembara"
+  },
+  {
+    "nom": "Tribu Kiembara-Sud",
+    "canton_nom": "Kiembara"
+  },
+  {
+    "nom": "Tribu Kiembara-Central",
+    "canton_nom": "Kiembara"
+  },
+  {
+    "nom": "Tribu Koufo-Nord",
+    "canton_nom": "Koufo"
+  },
+  {
+    "nom": "Tribu Koufo-Sud",
+    "canton_nom": "Koufo"
+  },
+  {
+    "nom": "Tribu Koufo-Central",
+    "canton_nom": "Koufo"
+  },
+  {
+    "nom": "Tribu Diambala-Nord",
+    "canton_nom": "Diambala"
+  },
+  {
+    "nom": "Tribu Diambala-Sud",
+    "canton_nom": "Diambala"
+  },
+  {
+    "nom": "Tribu Diambala-Central",
+    "canton_nom": "Diambala"
+  },
+  {
+    "nom": "Tribu Sienko-Nord",
+    "canton_nom": "Sienko"
+  },
+  {
+    "nom": "Tribu Sienko-Sud",
+    "canton_nom": "Sienko"
+  },
+  {
+    "nom": "Tribu Sienko-Central",
+    "canton_nom": "Sienko"
+  },
+  {
+    "nom": "Tribu Nafana-Odienné-Nord",
+    "canton_nom": "Nafana-Odienné"
+  },
+  {
+    "nom": "Tribu Nafana-Odienné-Sud",
+    "canton_nom": "Nafana-Odienné"
+  },
+  {
+    "nom": "Tribu Nafana-Odienné-Central",
+    "canton_nom": "Nafana-Odienné"
+  },
+  {
+    "nom": "Tribu Pacolo-Nord",
+    "canton_nom": "Pacolo"
+  },
+  {
+    "nom": "Tribu Pacolo-Sud",
+    "canton_nom": "Pacolo"
+  },
+  {
+    "nom": "Tribu Pacolo-Central",
+    "canton_nom": "Pacolo"
+  },
+  {
+    "nom": "Tribu Zabouo-Nord",
+    "canton_nom": "Zabouo"
+  },
+  {
+    "nom": "Tribu Zabouo-Sud",
+    "canton_nom": "Zabouo"
+  },
+  {
+    "nom": "Tribu Zabouo-Central",
+    "canton_nom": "Zabouo"
+  },
+  {
+    "nom": "Tribu Guébié-Nord",
+    "canton_nom": "Guébié"
+  },
+  {
+    "nom": "Tribu Guébié-Sud",
+    "canton_nom": "Guébié"
+  },
+  {
+    "nom": "Tribu Guébié-Central",
+    "canton_nom": "Guébié"
+  },
+  {
+    "nom": "Tribu Négagbo-Nord",
+    "canton_nom": "Négagbo"
+  },
+  {
+    "nom": "Tribu Négagbo-Sud",
+    "canton_nom": "Négagbo"
+  },
+  {
+    "nom": "Tribu Négagbo-Central",
+    "canton_nom": "Négagbo"
+  },
+  {
+    "nom": "Tribu Niambré-Nord",
+    "canton_nom": "Niambré"
+  },
+  {
+    "nom": "Tribu Niambré-Sud",
+    "canton_nom": "Niambré"
+  },
+  {
+    "nom": "Tribu Niambré-Central",
+    "canton_nom": "Niambré"
+  },
+  {
+    "nom": "Tribu Djigbouo-Nord",
+    "canton_nom": "Djigbouo"
+  },
+  {
+    "nom": "Tribu Djigbouo-Sud",
+    "canton_nom": "Djigbouo"
+  },
+  {
+    "nom": "Tribu Djigbouo-Central",
+    "canton_nom": "Djigbouo"
+  },
+  {
+    "nom": "Tribu Gotibo-Nord",
+    "canton_nom": "Gotibo"
+  },
+  {
+    "nom": "Tribu Gotibo-Sud",
+    "canton_nom": "Gotibo"
+  },
+  {
+    "nom": "Tribu Gotibo-Central",
+    "canton_nom": "Gotibo"
+  },
+  {
+    "nom": "Tribu Ziki-Nord",
+    "canton_nom": "Ziki"
+  },
+  {
+    "nom": "Tribu Ziki-Sud",
+    "canton_nom": "Ziki"
+  },
+  {
+    "nom": "Tribu Ziki-Central",
+    "canton_nom": "Ziki"
+  },
+  {
+    "nom": "Tribu Deboua-Nord",
+    "canton_nom": "Deboua"
+  },
+  {
+    "nom": "Tribu Deboua-Sud",
+    "canton_nom": "Deboua"
+  },
+  {
+    "nom": "Tribu Deboua-Central",
+    "canton_nom": "Deboua"
+  },
+  {
+    "nom": "Tribu Togba-Nord",
+    "canton_nom": "Togba"
+  },
+  {
+    "nom": "Tribu Togba-Sud",
+    "canton_nom": "Togba"
+  },
+  {
+    "nom": "Tribu Togba-Central",
+    "canton_nom": "Togba"
+  },
+  {
+    "nom": "Tribu Badié-Nord",
+    "canton_nom": "Badié"
+  },
+  {
+    "nom": "Tribu Badié-Sud",
+    "canton_nom": "Badié"
+  },
+  {
+    "nom": "Tribu Badié-Central",
+    "canton_nom": "Badié"
+  },
+  {
+    "nom": "Tribu Tigrou-Nord",
+    "canton_nom": "Tigrou"
+  },
+  {
+    "nom": "Tribu Tigrou-Sud",
+    "canton_nom": "Tigrou"
+  },
+  {
+    "nom": "Tribu Tigrou-Central",
+    "canton_nom": "Tigrou"
+  },
+  {
+    "nom": "Tribu Yocoboué-Nord",
+    "canton_nom": "Yocoboué"
+  },
+  {
+    "nom": "Tribu Yocoboué-Sud",
+    "canton_nom": "Yocoboué"
+  },
+  {
+    "nom": "Tribu Yocoboué-Central",
+    "canton_nom": "Yocoboué"
+  },
+  {
+    "nom": "Tribu Yowê-Nord",
+    "canton_nom": "Yowê"
+  },
+  {
+    "nom": "Tribu Yowê-Sud",
+    "canton_nom": "Yowê"
+  },
+  {
+    "nom": "Tribu Yowê-Central",
+    "canton_nom": "Yowê"
+  },
+  {
+    "nom": "Tribu Brokoua-Nord",
+    "canton_nom": "Brokoua"
+  },
+  {
+    "nom": "Tribu Brokoua-Sud",
+    "canton_nom": "Brokoua"
+  },
+  {
+    "nom": "Tribu Brokoua-Central",
+    "canton_nom": "Brokoua"
+  },
+  {
+    "nom": "Tribu Yocolo-Nord",
+    "canton_nom": "Yocolo"
+  },
+  {
+    "nom": "Tribu Yocolo-Sud",
+    "canton_nom": "Yocolo"
+  },
+  {
+    "nom": "Tribu Yocolo-Central",
+    "canton_nom": "Yocolo"
+  },
+  {
+    "nom": "Tribu Khassé-Nord",
+    "canton_nom": "Khassé"
+  },
+  {
+    "nom": "Tribu Khassé-Sud",
+    "canton_nom": "Khassé"
+  },
+  {
+    "nom": "Tribu Khassé-Central",
+    "canton_nom": "Khassé"
+  },
+  {
+    "nom": "Tribu Toura-Nord",
+    "canton_nom": "Toura"
+  },
+  {
+    "nom": "Tribu Toura-Sud",
+    "canton_nom": "Toura"
+  },
+  {
+    "nom": "Tribu Toura-Central",
+    "canton_nom": "Toura"
+  },
+  {
+    "nom": "Tribu Boo-Nord",
+    "canton_nom": "Boo"
+  },
+  {
+    "nom": "Tribu Boo-Sud",
+    "canton_nom": "Boo"
+  },
+  {
+    "nom": "Tribu Boo-Central",
+    "canton_nom": "Boo"
+  },
+  {
+    "nom": "Tribu Zarabaon-Nord",
+    "canton_nom": "Zarabaon"
+  },
+  {
+    "nom": "Tribu Zarabaon-Sud",
+    "canton_nom": "Zarabaon"
+  },
+  {
+    "nom": "Tribu Zarabaon-Central",
+    "canton_nom": "Zarabaon"
+  },
+  {
+    "nom": "Tribu Tao-Nord",
+    "canton_nom": "Tao"
+  },
+  {
+    "nom": "Tribu Tao-Sud",
+    "canton_nom": "Tao"
+  },
+  {
+    "nom": "Tribu Tao-Central",
+    "canton_nom": "Tao"
+  },
+  {
+    "nom": "Tribu Néao-Nord",
+    "canton_nom": "Néao"
+  },
+  {
+    "nom": "Tribu Néao-Sud",
+    "canton_nom": "Néao"
+  },
+  {
+    "nom": "Tribu Néao-Central",
+    "canton_nom": "Néao"
+  },
+  {
+    "nom": "Tribu Fléo-Nord",
+    "canton_nom": "Fléo"
+  },
+  {
+    "nom": "Tribu Fléo-Sud",
+    "canton_nom": "Fléo"
+  },
+  {
+    "nom": "Tribu Fléo-Central",
+    "canton_nom": "Fléo"
+  },
+  {
+    "nom": "Tribu Béo-Nord",
+    "canton_nom": "Béo"
+  },
+  {
+    "nom": "Tribu Béo-Sud",
+    "canton_nom": "Béo"
+  },
+  {
+    "nom": "Tribu Béo-Central",
+    "canton_nom": "Béo"
+  },
+  {
+    "nom": "Tribu Gboho-Nord",
+    "canton_nom": "Gboho"
+  },
+  {
+    "nom": "Tribu Gboho-Sud",
+    "canton_nom": "Gboho"
+  },
+  {
+    "nom": "Tribu Gboho-Central",
+    "canton_nom": "Gboho"
+  },
+  {
+    "nom": "Tribu Blouno-Nord",
+    "canton_nom": "Blouno"
+  },
+  {
+    "nom": "Tribu Blouno-Sud",
+    "canton_nom": "Blouno"
+  },
+  {
+    "nom": "Tribu Blouno-Central",
+    "canton_nom": "Blouno"
+  },
+  {
+    "nom": "Tribu Kalé-Nord",
+    "canton_nom": "Kalé"
+  },
+  {
+    "nom": "Tribu Kalé-Sud",
+    "canton_nom": "Kalé"
+  },
+  {
+    "nom": "Tribu Kalé-Central",
+    "canton_nom": "Kalé"
+  },
+  {
+    "nom": "Tribu Chien-Nord",
+    "canton_nom": "Chien"
+  },
+  {
+    "nom": "Tribu Chien-Sud",
+    "canton_nom": "Chien"
+  },
+  {
+    "nom": "Tribu Chien-Central",
+    "canton_nom": "Chien"
+  },
+  {
+    "nom": "Tribu Gouran-Nord",
+    "canton_nom": "Gouran"
+  },
+  {
+    "nom": "Tribu Gouran-Sud",
+    "canton_nom": "Gouran"
+  },
+  {
+    "nom": "Tribu Gouran-Central",
+    "canton_nom": "Gouran"
+  },
+  {
+    "nom": "Tribu Barala-Nord",
+    "canton_nom": "Barala"
+  },
+  {
+    "nom": "Tribu Barala-Sud",
+    "canton_nom": "Barala"
+  },
+  {
+    "nom": "Tribu Barala-Central",
+    "canton_nom": "Barala"
+  },
+  {
+    "nom": "Tribu Kanika-Nord",
+    "canton_nom": "Kanika"
+  },
+  {
+    "nom": "Tribu Kanika-Sud",
+    "canton_nom": "Kanika"
+  },
+  {
+    "nom": "Tribu Kanika-Central",
+    "canton_nom": "Kanika"
+  },
+  {
+    "nom": "Tribu Nigbô-Nord",
+    "canton_nom": "Nigbô"
+  },
+  {
+    "nom": "Tribu Nigbô-Sud",
+    "canton_nom": "Nigbô"
+  },
+  {
+    "nom": "Tribu Nigbô-Central",
+    "canton_nom": "Nigbô"
+  },
+  {
+    "nom": "Tribu Sokala-Nord",
+    "canton_nom": "Sokala"
+  },
+  {
+    "nom": "Tribu Sokala-Sud",
+    "canton_nom": "Sokala"
+  },
+  {
+    "nom": "Tribu Sokala-Central",
+    "canton_nom": "Sokala"
+  },
+  {
+    "nom": "Tribu Kamalo-Nord",
+    "canton_nom": "Kamalo"
+  },
+  {
+    "nom": "Tribu Kamalo-Sud",
+    "canton_nom": "Kamalo"
+  },
+  {
+    "nom": "Tribu Kamalo-Central",
+    "canton_nom": "Kamalo"
+  },
+  {
+    "nom": "Tribu Tchoya-Nord",
+    "canton_nom": "Tchoya"
+  },
+  {
+    "nom": "Tribu Tchoya-Sud",
+    "canton_nom": "Tchoya"
+  },
+  {
+    "nom": "Tribu Tchoya-Central",
+    "canton_nom": "Tchoya"
+  },
+  {
+    "nom": "Tribu Morié-Nord",
+    "canton_nom": "Morié"
+  },
+  {
+    "nom": "Tribu Morié-Sud",
+    "canton_nom": "Morié"
+  },
+  {
+    "nom": "Tribu Morié-Central",
+    "canton_nom": "Morié"
+  },
+  {
+    "nom": "Tribu Abbey-Ve-Nord",
+    "canton_nom": "Abbey-Ve"
+  },
+  {
+    "nom": "Tribu Abbey-Ve-Sud",
+    "canton_nom": "Abbey-Ve"
+  },
+  {
+    "nom": "Tribu Abbey-Ve-Central",
+    "canton_nom": "Abbey-Ve"
+  },
+  {
+    "nom": "Tribu Krobou-Nord",
+    "canton_nom": "Krobou"
+  },
+  {
+    "nom": "Tribu Krobou-Sud",
+    "canton_nom": "Krobou"
+  },
+  {
+    "nom": "Tribu Krobou-Central",
+    "canton_nom": "Krobou"
+  },
+  {
+    "nom": "Tribu Abidji-Nord",
+    "canton_nom": "Abidji"
+  },
+  {
+    "nom": "Tribu Abidji-Sud",
+    "canton_nom": "Abidji"
+  },
+  {
+    "nom": "Tribu Abidji-Central",
+    "canton_nom": "Abidji"
+  },
+  {
+    "nom": "Tribu Sanwi-Nord",
+    "canton_nom": "Sanwi"
+  },
+  {
+    "nom": "Tribu Sanwi-Sud",
+    "canton_nom": "Sanwi"
+  },
+  {
+    "nom": "Tribu Sanwi-Central",
+    "canton_nom": "Sanwi"
+  },
+  {
+    "nom": "Tribu Ndjamé-Nord",
+    "canton_nom": "Ndjamé"
+  },
+  {
+    "nom": "Tribu Ndjamé-Sud",
+    "canton_nom": "Ndjamé"
+  },
+  {
+    "nom": "Tribu Ndjamé-Central",
+    "canton_nom": "Ndjamé"
+  },
+  {
+    "nom": "Tribu Djiroutou-Nord",
+    "canton_nom": "Djiroutou"
+  },
+  {
+    "nom": "Tribu Djiroutou-Sud",
+    "canton_nom": "Djiroutou"
+  },
+  {
+    "nom": "Tribu Djiroutou-Central",
+    "canton_nom": "Djiroutou"
+  },
+  {
+    "nom": "Tribu Hôpo-Nord",
+    "canton_nom": "Hôpo"
+  },
+  {
+    "nom": "Tribu Hôpo-Sud",
+    "canton_nom": "Hôpo"
+  },
+  {
+    "nom": "Tribu Hôpo-Central",
+    "canton_nom": "Hôpo"
+  },
+  {
+    "nom": "Tribu Bado-Nord",
+    "canton_nom": "Bado"
+  },
+  {
+    "nom": "Tribu Bado-Sud",
+    "canton_nom": "Bado"
+  },
+  {
+    "nom": "Tribu Bado-Central",
+    "canton_nom": "Bado"
+  },
+  {
+    "nom": "Tribu Neabo-Nord",
+    "canton_nom": "Neabo"
+  },
+  {
+    "nom": "Tribu Neabo-Sud",
+    "canton_nom": "Neabo"
+  },
+  {
+    "nom": "Tribu Neabo-Central",
+    "canton_nom": "Neabo"
+  },
+  {
+    "nom": "Tribu Bakoué-Nord",
+    "canton_nom": "Bakoué"
+  },
+  {
+    "nom": "Tribu Bakoué-Sud",
+    "canton_nom": "Bakoué"
+  },
+  {
+    "nom": "Tribu Bakoué-Central",
+    "canton_nom": "Bakoué"
+  },
+  {
+    "nom": "Tribu Soubré-Canton-Nord",
+    "canton_nom": "Soubré-Canton"
+  },
+  {
+    "nom": "Tribu Soubré-Canton-Sud",
+    "canton_nom": "Soubré-Canton"
+  },
+  {
+    "nom": "Tribu Soubré-Canton-Central",
+    "canton_nom": "Soubré-Canton"
+  },
+  {
+    "nom": "Tribu Kroumen-Nord",
+    "canton_nom": "Kroumen"
+  },
+  {
+    "nom": "Tribu Kroumen-Sud",
+    "canton_nom": "Kroumen"
+  },
+  {
+    "nom": "Tribu Kroumen-Central",
+    "canton_nom": "Kroumen"
+  },
+  {
+    "nom": "Tribu Ahizan-Nord",
+    "canton_nom": "Ahizan"
+  },
+  {
+    "nom": "Tribu Ahizan-Sud",
+    "canton_nom": "Ahizan"
+  },
+  {
+    "nom": "Tribu Ahizan-Central",
+    "canton_nom": "Ahizan"
+  },
+  {
+    "nom": "Tribu Koulango-Nord",
+    "canton_nom": "Koulango"
+  },
+  {
+    "nom": "Tribu Koulango-Sud",
+    "canton_nom": "Koulango"
+  },
+  {
+    "nom": "Tribu Koulango-Central",
+    "canton_nom": "Koulango"
+  },
+  {
+    "nom": "Tribu Lobi-Nord",
+    "canton_nom": "Lobi"
+  },
+  {
+    "nom": "Tribu Lobi-Sud",
+    "canton_nom": "Lobi"
+  },
+  {
+    "nom": "Tribu Lobi-Central",
+    "canton_nom": "Lobi"
+  },
+  {
+    "nom": "Tribu Bron-Nord",
+    "canton_nom": "Bron"
+  },
+  {
+    "nom": "Tribu Bron-Sud",
+    "canton_nom": "Bron"
+  },
+  {
+    "nom": "Tribu Bron-Central",
+    "canton_nom": "Bron"
+  },
+  {
+    "nom": "Tribu Barabo-Nord",
+    "canton_nom": "Barabo"
+  },
+  {
+    "nom": "Tribu Barabo-Sud",
+    "canton_nom": "Barabo"
+  },
+  {
+    "nom": "Tribu Barabo-Central",
+    "canton_nom": "Barabo"
+  },
+  {
+    "nom": "Tribu Sandégué-Canton-Nord",
+    "canton_nom": "Sandégué-Canton"
+  },
+  {
+    "nom": "Tribu Sandégué-Canton-Sud",
+    "canton_nom": "Sandégué-Canton"
+  },
+  {
+    "nom": "Tribu Sandégué-Canton-Central",
+    "canton_nom": "Sandégué-Canton"
+  }
+]

@@ -1,0 +1,29 @@
+# Introduction et Résumé du mémoire
+
+> Rédaction validée avec Ibrahim le 07/07/2026. Langage simple, structure conforme au cours de méthodologie (introduction : préambule → sujet + justification → problématique + questions secondaires → annonce du plan ; résumé : 200-240 mots, domaine → problématique → résultats → mots-clés).
+>
+> ⚠️ Le résumé se finalise à la toute fin du projet : sa dernière phrase est marquée « à confirmer » car l'enregistrement des ressortissants n'est pas encore développé (seul l'import ANStat est terminé et vérifié à ce jour).
+
+---
+
+## INTRODUCTION
+
+Au cours des dernières années, la Côte d'Ivoire a engagé une modernisation profonde de ses services publics grâce au numérique. Le recensement de la population occupe une place centrale dans cette dynamique : savoir combien de personnes vivent sur le territoire, où elles se trouvent et qui elles sont, est indispensable pour planifier les écoles, les hôpitaux, les routes et l'ensemble des politiques publiques. Plusieurs outils ont été mis en place dans ce but : l'Agence Nationale de la Statistique (ANStat) organise le Recensement Général de la Population et de l'Habitat (RGPH), et l'Office National de l'État Civil et de l'Identification (ONECI) gère l'état civil à travers le Registre National des Personnes Physiques (RNPP) et le logiciel Cityweb.
+
+Pourtant, l'identité d'un Ivoirien ne se limite pas à sa place dans le découpage administratif. Elle est aussi profondément liée à la structure coutumière — le canton, la tribu et le village d'origine —, une organisation traditionnelle reconnue par la loi et inscrite dans la Constitution de 2016 à travers la Chambre Nationale des Rois et Chefs Traditionnels. Or, aucun des outils numériques existants n'enregistre ce rattachement coutumier : il reste géré de façon informelle, sans registre.
+
+C'est dans ce contexte que s'inscrit le présent travail, réalisé lors d'un stage de fin de cycle au sein de l'entreprise Worldev. Le sujet — « Concevoir une application web de recensement des ressortissants ivoiriens : structure ANStat et structure coutumière » — consiste à créer un outil qui relie, pour chaque personne recensée, ses deux rattachements territoriaux : le rattachement administratif officiel et le rattachement coutumier. Ce sujet présente un triple intérêt : sur le plan académique, il permet de mettre en pratique les connaissances acquises en analyse, en conception de bases de données et en développement web ; sur le plan sociétal, il facilite un recensement complet des Ivoiriens, y compris ceux de la diaspora, en valorisant leur ancrage culturel ; sur le plan scientifique, il propose un modèle de données qui relie deux structures territoriales indépendantes, un aspect peu traité dans les systèmes existants.
+
+Cette réflexion conduit à la problématique suivante : **comment concevoir une application web qui recense les Ivoiriens en tenant compte à la fois de leur rattachement officiel (ANStat) et de leur rattachement coutumier (canton, tribu, village) ?** Cette question centrale en soulève trois autres : comment représenter dans une même base de données deux structures indépendantes, sans que l'une dépende de l'autre ? Comment garantir que le découpage administratif enregistré reste fidèle aux données officielles de l'ANStat ? Et comment recenser aussi les ressortissants qui vivent hors du pays ?
+
+Pour traiter cette question, la démarche retenue est la conception et le développement d'une application web avec le framework Laravel, en s'appuyant sur la méthode d'analyse du Processus Unifié et le langage de modélisation UML, et en alimentant la base de données directement depuis les données officielles de l'ANStat.
+
+Pour répondre à ces questions, le présent mémoire s'organise en trois parties. La première partie, consacrée aux généralités, présente l'entreprise d'accueil, les notions de base, l'étude des systèmes existants et le cahier des charges du projet. La deuxième partie porte sur l'analyse et la conception : elle justifie le choix de la méthode d'analyse et présente la modélisation de l'application et de sa base de données. Enfin, la troisième partie expose les résultats obtenus, en discute la portée et propose des perspectives d'évolution.
+
+---
+
+## RÉSUMÉ
+
+Ce mémoire présente la conception et le développement d'une application web de recensement des ressortissants ivoiriens, réalisés dans le cadre d'un stage de fin de cycle au sein de l'entreprise Worldev. En Côte d'Ivoire, les systèmes existants — le RGPH mené par l'ANStat et le RNPP géré par l'ONECI — traitent chacun un aspect du recensement ou de l'identification, mais aucun ne relie le rattachement administratif officiel d'une personne (district, région, département, sous-préfecture) à son rattachement coutumier (canton, tribu, village). L'application conçue comble ce manque. Elle importe automatiquement le découpage administratif officiel depuis l'interface publique de l'ANStat, construit la structure coutumière de façon indépendante, puis relie chaque ressortissant à ses deux rattachements et à son lieu de résidence — ce qui permet aussi de recenser les Ivoiriens de la diaspora. Le développement s'appuie sur le framework Laravel (PHP) et une base de données relationnelle, avec deux acteurs : le ressortissant, qui se recense lui-même, et l'administrateur, qui gère les données de référence et les comptes. Les résultats montrent que l'import couvre l'intégralité du découpage officiel — quatorze districts, trente-trois régions, cent onze départements et cinq cent vingt-six sous-préfectures — et que l'enregistrement des ressortissants avec leurs deux rattachements est opérationnel *(à confirmer : cette dernière affirmation ne sera vraie qu'une fois le développement achevé ; à vérifier avant le dépôt du mémoire)*.
+
+**Mots-clés :** recensement, application web, structure administrative, structure coutumière, ANStat, Laravel.

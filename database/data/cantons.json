@@ -1,0 +1,374 @@
+[
+  {
+    "nom": "Ahaly",
+    "sous_prefecture_nom": "BROBO"
+  },
+  {
+    "nom": "Faafouè",
+    "sous_prefecture_nom": "BONOUA"
+  },
+  {
+    "nom": "Gblo",
+    "sous_prefecture_nom": "DIABO"
+  },
+  {
+    "nom": "N'Dranoua",
+    "sous_prefecture_nom": "SAKASSOU"
+  },
+  {
+    "nom": "Prepressou",
+    "sous_prefecture_nom": "SAKASSOU"
+  },
+  {
+    "nom": "Ayahou",
+    "sous_prefecture_nom": "BEOUMI"
+  },
+  {
+    "nom": "Walèbo",
+    "sous_prefecture_nom": "SAKASSOU"
+  },
+  {
+    "nom": "Kode",
+    "sous_prefecture_nom": "BEOUMI"
+  },
+  {
+    "nom": "Satama",
+    "sous_prefecture_nom": "KORO"
+  },
+  {
+    "nom": "Pharis",
+    "sous_prefecture_nom": "KATIOLA"
+  },
+  {
+    "nom": "Sahoua",
+    "sous_prefecture_nom": "KATIOLA"
+  },
+  {
+    "nom": "Mamara",
+    "sous_prefecture_nom": "FERKESSEDOUGOU"
+  },
+  {
+    "nom": "Watara",
+    "sous_prefecture_nom": "DABAKALA"
+  },
+  {
+    "nom": "Djamala",
+    "sous_prefecture_nom": "DABAKALA"
+  },
+  {
+    "nom": "Mangoro",
+    "sous_prefecture_nom": "KATIOLA"
+  },
+  {
+    "nom": "Nanafouè",
+    "sous_prefecture_nom": "TIEBISSOU"
+  },
+  {
+    "nom": "Aïtou",
+    "sous_prefecture_nom": "TIEBISSOU"
+  },
+  {
+    "nom": "Akouè",
+    "sous_prefecture_nom": "YAMOUSSOUKRO"
+  },
+  {
+    "nom": "N'Gban",
+    "sous_prefecture_nom": "TOUMODI-SAKASSOU"
+  },
+  {
+    "nom": "Saa",
+    "sous_prefecture_nom": "TOUMODI-SAKASSOU"
+  },
+  {
+    "nom": "Souamlin",
+    "sous_prefecture_nom": "TAABO"
+  },
+  {
+    "nom": "Anno",
+    "sous_prefecture_nom": "PRIKRO"
+  },
+  {
+    "nom": "Moronou",
+    "sous_prefecture_nom": "BONGO"
+  },
+  {
+    "nom": "Agba",
+    "sous_prefecture_nom": "DIMBOKRO"
+  },
+  {
+    "nom": "Ahali-Dimbokro",
+    "sous_prefecture_nom": "DIMBOKRO"
+  },
+  {
+    "nom": "Kirioua",
+    "sous_prefecture_nom": "ARRAH"
+  },
+  {
+    "nom": "Ehivet",
+    "sous_prefecture_nom": "M'BAHIAKRO"
+  },
+  {
+    "nom": "Bougouri",
+    "sous_prefecture_nom": "KORHOGO"
+  },
+  {
+    "nom": "Lossom",
+    "sous_prefecture_nom": "BOUNDIALI"
+  },
+  {
+    "nom": "Kassemble",
+    "sous_prefecture_nom": "BOUNDIALI"
+  },
+  {
+    "nom": "Tiéma",
+    "sous_prefecture_nom": "TENGRELA"
+  },
+  {
+    "nom": "Niarafolo",
+    "sous_prefecture_nom": "FERKESSEDOUGOU"
+  },
+  {
+    "nom": "Nafana",
+    "sous_prefecture_nom": "SINEMATIALI"
+  },
+  {
+    "nom": "Pongala",
+    "sous_prefecture_nom": "KOUTO"
+  },
+  {
+    "nom": "Kiembara",
+    "sous_prefecture_nom": "M'BENGUE"
+  },
+  {
+    "nom": "Koufo",
+    "sous_prefecture_nom": "KOUTO"
+  },
+  {
+    "nom": "Diambala",
+    "sous_prefecture_nom": "DIKODOUGOU"
+  },
+  {
+    "nom": "Sienko",
+    "sous_prefecture_nom": "MINIGNAN"
+  },
+  {
+    "nom": "Nafana-Odienné",
+    "sous_prefecture_nom": "ODIENNE"
+  },
+  {
+    "nom": "Pacolo",
+    "sous_prefecture_nom": "GAGNOA"
+  },
+  {
+    "nom": "Zabouo",
+    "sous_prefecture_nom": "GAGNOA"
+  },
+  {
+    "nom": "Guébié",
+    "sous_prefecture_nom": "GAGNOA"
+  },
+  {
+    "nom": "Négagbo",
+    "sous_prefecture_nom": "GAGNOA"
+  },
+  {
+    "nom": "Niambré",
+    "sous_prefecture_nom": "GAGNOA"
+  },
+  {
+    "nom": "Djigbouo",
+    "sous_prefecture_nom": "GAGNOA"
+  },
+  {
+    "nom": "Gotibo",
+    "sous_prefecture_nom": "LAKOTA"
+  },
+  {
+    "nom": "Ziki",
+    "sous_prefecture_nom": "LAKOTA"
+  },
+  {
+    "nom": "Deboua",
+    "sous_prefecture_nom": "GUITRY"
+  },
+  {
+    "nom": "Togba",
+    "sous_prefecture_nom": "DIVO"
+  },
+  {
+    "nom": "Badié",
+    "sous_prefecture_nom": "DIVO"
+  },
+  {
+    "nom": "Tigrou",
+    "sous_prefecture_nom": "DIVO"
+  },
+  {
+    "nom": "Yocoboué",
+    "sous_prefecture_nom": "YOCOBOUE"
+  },
+  {
+    "nom": "Yowê",
+    "sous_prefecture_nom": "VAVOUA"
+  },
+  {
+    "nom": "Brokoua",
+    "sous_prefecture_nom": "ISSIA"
+  },
+  {
+    "nom": "Yocolo",
+    "sous_prefecture_nom": "SAIOUA"
+  },
+  {
+    "nom": "Khassé",
+    "sous_prefecture_nom": "BIANKOUMA"
+  },
+  {
+    "nom": "Toura",
+    "sous_prefecture_nom": "NAMANE"
+  },
+  {
+    "nom": "Boo",
+    "sous_prefecture_nom": "DANANE"
+  },
+  {
+    "nom": "Zarabaon",
+    "sous_prefecture_nom": "GUIGLO"
+  },
+  {
+    "nom": "Tao",
+    "sous_prefecture_nom": "GUIGLO"
+  },
+  {
+    "nom": "Néao",
+    "sous_prefecture_nom": "DUEKOUE"
+  },
+  {
+    "nom": "Fléo",
+    "sous_prefecture_nom": "TOULEPLEU"
+  },
+  {
+    "nom": "Béo",
+    "sous_prefecture_nom": "BANGOLO"
+  },
+  {
+    "nom": "Gboho",
+    "sous_prefecture_nom": "ZOUAN-HOUNIEN"
+  },
+  {
+    "nom": "Blouno",
+    "sous_prefecture_nom": "NAMANE"
+  },
+  {
+    "nom": "Kalé",
+    "sous_prefecture_nom": "BIANKOUMA"
+  },
+  {
+    "nom": "Chien",
+    "sous_prefecture_nom": "BLOLEQUIN"
+  },
+  {
+    "nom": "Gouran",
+    "sous_prefecture_nom": "TOUBA"
+  },
+  {
+    "nom": "Barala",
+    "sous_prefecture_nom": "TOUBA"
+  },
+  {
+    "nom": "Kanika",
+    "sous_prefecture_nom": "MAN"
+  },
+  {
+    "nom": "Nigbô",
+    "sous_prefecture_nom": "KANI"
+  },
+  {
+    "nom": "Sokala",
+    "sous_prefecture_nom": "SEGUELA"
+  },
+  {
+    "nom": "Kamalo",
+    "sous_prefecture_nom": "SEGUELA"
+  },
+  {
+    "nom": "Tchoya",
+    "sous_prefecture_nom": "ADZOPE"
+  },
+  {
+    "nom": "Morié",
+    "sous_prefecture_nom": "AGBOVILLE"
+  },
+  {
+    "nom": "Abbey-Ve",
+    "sous_prefecture_nom": "AGBOVILLE"
+  },
+  {
+    "nom": "Krobou",
+    "sous_prefecture_nom": "SIKENSI"
+  },
+  {
+    "nom": "Abidji",
+    "sous_prefecture_nom": "SIKENSI"
+  },
+  {
+    "nom": "Sanwi",
+    "sous_prefecture_nom": "ABOISSO"
+  },
+  {
+    "nom": "Ndjamé",
+    "sous_prefecture_nom": "JACQUEVILLE"
+  },
+  {
+    "nom": "Djiroutou",
+    "sous_prefecture_nom": "TABOU"
+  },
+  {
+    "nom": "Hôpo",
+    "sous_prefecture_nom": "TABOU"
+  },
+  {
+    "nom": "Bado",
+    "sous_prefecture_nom": "SASSANDRA"
+  },
+  {
+    "nom": "Neabo",
+    "sous_prefecture_nom": "SASSANDRA"
+  },
+  {
+    "nom": "Bakoué",
+    "sous_prefecture_nom": "SOUBRE"
+  },
+  {
+    "nom": "Soubré-Canton",
+    "sous_prefecture_nom": "SOUBRE"
+  },
+  {
+    "nom": "Kroumen",
+    "sous_prefecture_nom": "SAN-PEDRO"
+  },
+  {
+    "nom": "Ahizan",
+    "sous_prefecture_nom": "BONDO"
+  },
+  {
+    "nom": "Koulango",
+    "sous_prefecture_nom": "BOUNA"
+  },
+  {
+    "nom": "Lobi",
+    "sous_prefecture_nom": "BOUNA"
+  },
+  {
+    "nom": "Bron",
+    "sous_prefecture_nom": "TANDA"
+  },
+  {
+    "nom": "Barabo",
+    "sous_prefecture_nom": "TANDA"
+  },
+  {
+    "nom": "Sandégué-Canton",
+    "sous_prefecture_nom": "SANDEGUE"
+  }
+]
