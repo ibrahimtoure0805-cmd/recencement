@@ -13,16 +13,19 @@ use Illuminate\Http\JsonResponse;
 
 class DistrictController extends Controller
 {
-    // Renvoie la liste complète des 14 districts (consultation seule, aucune modification possible).
-    
+    // Ce code sert à restituer l'ensemble des districts administratifs.
+    // Il fonctionne avec le modèle Eloquent District.
+    // Dans le but de renvoyer la liste complète des 14 districts autonomes et réguliers en JSON.
+    // Pour régler le choix du district dans le formulaire d'inscription citoyenne.
     public function index(): JsonResponse
     {
         return response()->json(District::all());
     }
 
-    // Renvoie un seul district : celui dont le numéro est indiqué dans l'adresse de la demande.
-    // Si aucun district ne porte ce numéro, une réponse "introuvable" est envoyée automatiquement.
-    
+    // Ce code sert à afficher les informations d'un district unique.
+    // Il fonctionne avec l'injection de modèle District selon l'identifiant passé dans l'URL.
+    // Dans le but de transmettre le nom et le code du district demandé.
+    // Pour régler l'affichage ciblé d'un district.
     public function show(District $district): JsonResponse
     {
         return response()->json($district);

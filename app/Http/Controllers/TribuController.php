@@ -14,14 +14,19 @@ use Illuminate\Http\JsonResponse;
 
 class TribuController extends Controller
 {
-    // Renvoie la liste de toutes les tribus enregistrées.
+    // Ce code sert à lister l'ensemble des tribus recensées.
+    // Il fonctionne avec le modèle Eloquent Tribu.
+    // Dans le but de transmettre la liste des tribus au format JSON.
+    // Pour régler l'affichage du référentiel tribus dans les sélecteurs dynamiques.
     public function index(): JsonResponse
     {
         return response()->json(Tribu::all());
     }
 
-    // Enregistre une nouvelle tribu. TribuRequest a déjà vérifié le nom
-    // et l'existence réelle du canton avant que cette méthode ne s'exécute.
+    // Ce code sert à insérer une nouvelle tribu dans la base de données.
+    // Il fonctionne avec les données validées par TribuRequest (nom et canton_id).
+    // Dans le but de créer l'enregistrement et retourner une réponse HTTP 201.
+    // Pour régler la structuration du maillage coutumier intermédié.
     public function store(TribuRequest $request): JsonResponse
     {
         $tribu = Tribu::create($request->validated());
@@ -32,13 +37,19 @@ class TribuController extends Controller
         ], 201);
     }
 
-    // Renvoie une seule tribu : celle dont le numéro est indiqué dans l'adresse de la demande.
+    // Ce code sert à fournir les détails d'une tribu spécifique.
+    // Il fonctionne avec le binding d'instance de modèle Tribu.
+    // Dans le but d'envoyer l'objet tribu en réponse JSON.
+    // Pour régler la consultation ciblée d'une tribu.
     public function show(Tribu $tribu): JsonResponse
     {
         return response()->json($tribu);
     }
 
-    // Modifie une tribu existante (nom et/ou canton), mêmes vérifications qu'à la création.
+    // Ce code sert à mettre à jour les attributs d'une tribu.
+    // Il fonctionne avec l'instance de Tribu et les données validées reçues.
+    // Dans le but d'actualiser le nom ou le rattachement de la tribu.
+    // Pour régler la maintenance administrative des tribus.
     public function update(TribuRequest $request, Tribu $tribu): JsonResponse
     {
         $tribu->update($request->validated());
@@ -49,10 +60,12 @@ class TribuController extends Controller
         ]);
     }
 
-    // Supprime une tribu, après avoir vérifié nous-mêmes qu'aucun village n'y est rattaché.
+    // Ce code sert à supprimer une tribu si aucun village ne lui est associé.
+    // Il fonctionne avec la relation villages() du modèle Tribu.
+    // Dans le but de retirer la tribu ou d'émettre une alerte de conflit HTTP 409.
+    // Pour régler le maintien de l'intégrité référentielle entre tribus et villages.
     public function destroy(Tribu $tribu): JsonResponse
     {
-        // On vérifie l'erreur.
         if ($tribu->villages()->exists()) {
             return response()->json([
                 'message' => 'Impossible de supprimer : des villages sont encore rattachés à cette tribu.',

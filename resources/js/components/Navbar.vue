@@ -146,6 +146,10 @@
 </template>
 
 <script setup>
+// Ce code sert à déclarer les propriétés (props) et événements émises de la barre de navigation.
+// Il fonctionne avec le système de composables script setup de Vue 3.
+// Dans le but de réagir à la vue active, d'afficher l'identité de l'utilisateur connecté et de propager les événements de navigation et déconnexion.
+// Pour régler la cohérence de la navigation principale sur l'ensemble de la plateforme.
 defineProps({
   activeView: {
     type: String,

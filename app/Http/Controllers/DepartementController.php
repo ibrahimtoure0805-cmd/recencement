@@ -13,16 +13,19 @@ use Illuminate\Http\JsonResponse;
 
 class DepartementController extends Controller
 {
-    // Renvoie la liste complète des 111 départements (consultation seule, aucune modification possible).
-    
+    // Ce code sert à lister les 111 départements de la Côte d'Ivoire.
+    // Il fonctionne avec le modèle Eloquent Departement.
+    // Dans le but d'envoyer la liste des départements en JSON.
+    // Pour régler la sélection du département de rattachement administratif.
     public function index(): JsonResponse
     {
         return response()->json(Departement::all());
     }
 
-    // Renvoie un seul département : celui dont le numéro est indiqué dans l'adresse de la demande.
-    // Si aucun département ne porte ce numéro, une réponse "introuvable" est envoyée automatiquement.
-    
+    // Ce code sert à afficher les informations d'un département donné.
+    // Il fonctionne avec le modèle Departement résolu à partir du paramètre d'URL.
+    // Dans le but de transmettre la fiche du département sollicité.
+    // Pour régler la consultation ponctuelle d'un département.
     public function show(Departement $departement): JsonResponse
     {
         return response()->json($departement);

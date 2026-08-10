@@ -14,34 +14,42 @@ use Illuminate\Http\JsonResponse;
 
 class CantonController extends Controller
 {
-    // Renvoie la liste de tous les cantons enregistrés.
+    // Ce code sert à lister l'intégralité des cantons répertoriés.
+    // Il fonctionne avec le modèle Eloquent Canton.
+    // Dans le but de renvoyer la collection complète des cantons au format JSON.
+    // Pour régler la mise à disposition du référentiel cantonais pour les selects frontend.
     public function index(): JsonResponse
     {
         return response()->json(Canton::all());
     }
 
-    // Enregistre un nouveau canton. Les vérifications (nom présent, texte, 255 max)
-    // sont faites par CantonRequest AVANT d'entrer ici : si elles échouent,
-    // la demande est refusée automatiquement et cette méthode n'est jamais exécutée.
-    
+    // Ce code sert à enregistrer un nouveau canton dans le référentiel coutumier.
+    // Il fonctionne avec les données validées provenant de CantonRequest.
+    // Dans le but d'insérer l'enregistrement et de retourner une réponse HTTP 201.
+    // Pour régler l'enrichissement administrateur de la carte des cantons.
     public function store(CantonRequest $request): JsonResponse
     {
         $canton = Canton::create($request->validated());
 
-        // Le code 201 signale que la création a bien eu lieu.
         return response()->json([
             'message' => 'Canton créé avec succès.',
             'canton' => $canton,
         ], 201);
     }
 
-    // Renvoie un seul canton : celui dont le numéro est indiqué dans l'adresse de la demande.
+    // Ce code sert à retourner les détails d'un canton spécifique.
+    // Il fonctionne avec l'injection automatique du modèle Canton via son identifiant.
+    // Dans le but de transmettre les informations du canton en JSON.
+    // Pour régler la consultation unitaire d'un canton.
     public function show(Canton $canton): JsonResponse
     {
         return response()->json($canton);
     }
 
-    // Modifie le nom d'un canton existant, avec les mêmes vérifications qu'à la création.
+    // Ce code sert à mettre à jour les données d'un canton existant.
+    // Il fonctionne avec le modèle Canton ciblé et les données validées par CantonRequest.
+    // Dans le but d'enregistrer les modifications apportées au canton.
+    // Pour régler la correction des dénominations de cantons.
     public function update(CantonRequest $request, Canton $canton): JsonResponse
     {
         $canton->update($request->validated());
@@ -52,11 +60,12 @@ class CantonController extends Controller
         ]);
     }
 
-    // Supprime un canton, après avoir vérifié nous-mêmes qu'aucune tribu n'y est rattachée.
+    // Ce code sert à supprimer un canton s'il ne possède pas de tribus liées.
+    // Il fonctionne avec la relation tribus() du modèle Canton.
+    // Dans le but de supprimer le canton ou d'interdire l'action avec un code HTTP 409.
+    // Pour régler la protection contre la suppression orpheline d'entités dépendantes.
     public function destroy(Canton $canton): JsonResponse
     {
-        // Vérification explicite AVANT de tenter quoi que ce soit : on compte
-        // les tribus rattachées. Le refus est donc prouvé, pas déduit d'une erreur.
         if ($canton->tribus()->exists()) {
             return response()->json([
                 'message' => 'Impossible de supprimer : des tribus sont encore rattachées à ce canton.',
@@ -65,7 +74,6 @@ class CantonController extends Controller
 
         $canton->delete();
 
-        // Code 200 avec un message de confirmation .
         return response()->json([
             'message' => 'Canton supprimé avec succès.',
         ]);

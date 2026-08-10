@@ -11,9 +11,10 @@ use Illuminate\Database\Seeder;
 // Pour régler la standardisation des pays et marquer la Côte d'Ivoire par défaut.
 class PaysSeeder extends Seeder
 {
-    /**
-     * Exécute l'insertion des 193 pays en base de données.
-     */
+    // Ce code sert à insérer ou mettre à jour la liste complète des 193 pays de l'ONU en base de données.
+    // Il fonctionne avec le tableau $paysList et la méthode de mise à jour en masse Pays::upsert().
+    // Dans le but de peupler la table 'pays' et de définir la Côte d'Ivoire comme valeur par défaut.
+    // Pour régler la disponibilité des données géographiques internationales.
     public function run(): void
     {
         // Liste des 193 États membres de l'ONU
@@ -216,7 +217,7 @@ class PaysSeeder extends Seeder
         $now = now();
         $data = [];
 
-        // Prépare chaque ligne en marquant la Côte d'Ivoire par défaut (is_default = true)
+        // On parcourt chaque pays pour préparer les données d'insertion et marquer la Côte d'Ivoire par défaut (is_default = true)
         foreach ($paysList as $nom) {
             $isDefault = ($nom === "Côte d'Ivoire");
             $data[] = [

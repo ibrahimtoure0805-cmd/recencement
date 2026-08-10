@@ -8,11 +8,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+// Ce code sert à gérer l'authentification et l'enregistrement des utilisateurs.
+// Il fonctionne avec le modèle User, les façades Auth, Hash et Validator de Laravel Sanctum.
+// Dans le but d'authentifier les citoyens et les administrateurs, de générer des jetons d'accès et d'expédier les SMS OTP.
+// Pour régler la vérification d'identité et l'accès sécurisé aux API du recensement.
 class AuthController extends Controller
 {
-    /**
-     * Authentification par Numéro de Téléphone (ou Email) & Mot de passe.
-     */
+    // Ce code sert à connecter un utilisateur citoyen ou administrateur.
+    // Il fonctionne avec les identifiants reçus (téléphone/email, mot de passe, type de portail).
+    // Dans le but de vérifier le mot de passe hashé et de délivrer un jeton d'accès Sanctum.
+    // Pour régler la connexion sécurisée sur la plateforme.
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -31,6 +36,7 @@ class AuthController extends Controller
         }
 
         $identifier = $request->telephone ?? $request->email;
+        // Nettoie le numéro de téléphone pour ne conserver que les chiffres
         $cleanPhone = preg_replace('/[^0-9]/', '', $identifier);
         $generatedEmail = $cleanPhone ? $cleanPhone . '@recensement.ci' : '';
 
@@ -56,6 +62,7 @@ class AuthController extends Controller
                 'message' => 'Mot de passe incorrect. Veuillez réanalyser votre saisie.'
             ], 401);
         }
+        // Évalue le rôle administrateur ou citoyen selon l'email, le nom ou le portail sélectionné
         $user->role = (str_contains(strtolower($user->email), 'admin') || str_contains(strtolower($user->name), 'agent') || str_contains(strtolower($user->name), 'admin') || $request->portal === 'admin') ? 'admin' : 'citoyen';
 
         $token = $user->createToken('auth_token')->plainTextToken;
@@ -76,9 +83,10 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * Génère et simule l'envoi d'un code OTP SMS pour la validation du numéro de téléphone.
-     */
+    // Ce code sert à simuler la génération et l'envoi d'un code OTP par SMS pour la vérification téléphonique.
+    // Il fonctionne avec le numéro de téléphone transmis dans la requête HTTP.
+    // Dans le but de fournir un code de confirmation aléatoire à 4 chiffres à l'utilisateur.
+    // Pour régler la pré-validation du numéro de téléphone avant création du compte.
     public function sendOtp(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -93,6 +101,7 @@ class AuthController extends Controller
             ], 422);
         }
 
+        // Nettoie le numéro de téléphone pour constituer l'identifiant email virtuel
         $cleanPhone = preg_replace('/[^0-9]/', '', $request->telephone);
         $emailGenerated = $cleanPhone . '@recensement.ci';
 
@@ -117,9 +126,10 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * Inscription Citoyenne (Nom Complet, Numéro de téléphone, Créer un mot de passe).
-     */
+    // Ce code sert à créer un nouveau compte citoyen.
+    // Il fonctionne avec le nom, le numéro de téléphone et le mot de passe saisis.
+    // Dans le but d'enregistrer l'utilisateur en base de données avec un mot de passe sécurisé et de générer un jeton Sanctum.
+    // Pour régler l'auto-inscription des ressortissants.
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -136,6 +146,7 @@ class AuthController extends Controller
             ], 422);
         }
 
+        // Extrait uniquement les chiffres du numéro de téléphone pour composer l'identifiant système
         $cleanPhone = preg_replace('/[^0-9]/', '', $request->telephone);
         $emailGenerated = $cleanPhone . '@recensement.ci';
 
@@ -172,13 +183,19 @@ class AuthController extends Controller
         ], 201);
     }
 
+    // Ce code sert à récupérer le profil de l'utilisateur actuellement connecté.
+    // Il fonctionne avec le jeton Bearer de la requête HTTP Sanctum.
+    // Dans le but de renvoyer l'objet utilisateur avec son rôle calculé et son numéro de téléphone nettoyé.
+    // Pour régler le maintien de la session et la personnalisation de l'interface frontend.
     public function me(Request $request)
     {
         $user = $request->user();
         if ($user) {
+            // Détermine dynamiquement le rôle d'administration à partir de l'adresse email ou du nom
             $user->role = (str_contains(strtolower($user->email), 'admin') || str_contains(strtolower($user->name), 'agent') || str_contains(strtolower($user->name), 'admin')) ? 'admin' : 'citoyen';
             
             if (empty($user->telephone) && str_contains((string)$user->email, '@recensement.ci')) {
+                // Reconstitue le téléphone depuis l'email si absent de l'attribut principal
                 $cleanPhone = preg_replace('/[^0-9]/', '', explode('@', (string)$user->email)[0] ?? '');
                 if ($cleanPhone) {
                     $user->telephone = $cleanPhone;
@@ -191,6 +208,10 @@ class AuthController extends Controller
         ]);
     }
 
+    // Ce code sert à déconnecter l'utilisateur courant.
+    // Il fonctionne avec le jeton d'accès actuellement actif de l'utilisateur authentifié.
+    // Dans le but de révoquer et supprimer le jeton d'accès en base de données.
+    // Pour régler la fermeture sécurisée de la session utilisateur.
     public function logout(Request $request)
     {
         if ($request->user()) {

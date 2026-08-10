@@ -8,12 +8,16 @@ use App\Models\Ressortissant;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 
-// Ce contrôleur sert à fournir des données agrégées et statistiques pour les tableaux de bord.
-// Il fonctionne avec des requêtes GROUP BY ultra-rapides en SQL brut Eloquent.
+// Ce code sert à fournir des données agrégées et statistiques pour les tableaux de bord.
+// Il fonctionne avec le modèle Ressortissant et des requêtes SQL d'agrégation.
 // Dans le but de donner une vue synthétique de la population recensée (locaux vs diaspora, par sexe, par canton).
+// Pour régler la centralisation des calculs d'indicateurs de recensement.
 class StatistiqueController extends Controller
 {
-    // Fournit les indicateurs globaux de la plateforme.
+    // Ce code sert à calculer les indicateurs globaux de la plateforme de recensement.
+    // Il fonctionne avec la table des ressortissants en effectuant des requêtes d'agrégation groupées.
+    // Dans le but de fournir les totaux par statut de validation, sexe, type de pièce, situation matrimoniale et niveau d'étude.
+    // Pour régler la restitution synthétique des données au niveau national.
     public function globales(): JsonResponse
     {
         $total = Ressortissant::count();
@@ -70,7 +74,10 @@ class StatistiqueController extends Controller
         ]);
     }
 
-    // Fournit les statistiques relatives à la diaspora (ressortissants hors de Côte d'Ivoire).
+    // Ce code sert à calculer la répartition de la population vivant à l'étranger.
+    // Il fonctionne avec le scope diaspora() et agrège les données par pays de résidence et par consulat.
+    // Dans le but de transmettre le top des pays d'accueil et des consulats de rattachement.
+    // Pour régler le suivi statistique des ressortissants hors du territoire national.
     public function diaspora(): JsonResponse
     {
         $parPays = Ressortissant::diaspora()
@@ -95,7 +102,10 @@ class StatistiqueController extends Controller
         ]);
     }
 
-    // Fournit les statistiques relatives à l'ancrage coutumier (Cantons & Villages).
+    // Ce code sert à mesurer le niveau de rattachement aux cantons et villages d'origine.
+    // Il fonctionne avec des requêtes de jointure entre les ressortissants et les tables cantons et villages.
+    // Dans le but de faire ressortir les cantons et villages comptant le plus grand nombre d'inscrits.
+    // Pour régler le besoin d'analyse démographique et coutumière du territoire.
     public function coutumier(): JsonResponse
     {
         $parCanton = Ressortissant::query()

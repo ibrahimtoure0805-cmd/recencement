@@ -14,7 +14,10 @@ use Illuminate\Http\Request;
 
 class SousPrefectureController extends Controller
 {
-    // Renvoie la liste complète des 526 sous-préfectures (ou paginée si demandé)
+    // Ce code sert à renvoyer la liste complète ou paginée des sous-préfectures.
+    // Il fonctionne avec le paramètre 'paginate' éventuel de la requête HTTP et le modèle SousPrefecture.
+    // Dans le but de transmettre la liste des sous-préfectures en format JSON.
+    // Pour régler l'affichage du découpage administratif dans les formulaires et filtres.
     public function index(Request $request): JsonResponse
     {
         if ($request->has('paginate')) {
@@ -24,7 +27,10 @@ class SousPrefectureController extends Controller
         return response()->json(SousPrefecture::all());
     }
 
-    // Renvoie une seule sous-préfecture : celle dont le numéro est indiqué dans l'adresse de la demande.
+    // Ce code sert à afficher le détail d'une sous-préfecture ciblée par son identifiant.
+    // Il fonctionne avec le binding du modèle SousPrefecture injecté automatiquement par Laravel.
+    // Dans le but de renvoyer la fiche détaillée de la sous-préfecture.
+    // Pour régler la recherche ponctuelle d'une sous-préfecture spécifique.
     public function show(SousPrefecture $sousPrefecture): JsonResponse
     {
         return response()->json($sousPrefecture);

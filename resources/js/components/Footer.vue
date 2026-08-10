@@ -22,5 +22,9 @@
 </template>
 
 <script setup>
+// Ce code sert à déclarer l'événement de navigation du pied de page.
+// Il fonctionne avec le compilateur de composant script setup de Vue 3.
+// Dans le but de réémettre l'événement 'navigate' vers le composant parent.
+// Pour régler la réoriention vers les différentes vues depuis le pied de page.
 defineEmits(['navigate']);
 </script>

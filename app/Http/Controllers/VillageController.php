@@ -16,14 +16,19 @@ use Illuminate\Http\JsonResponse;
 
 class VillageController extends Controller
 {
-    // Renvoie la liste de tous les villages enregistrés.
+    // Ce code sert à répertorier l'ensemble des villages enregistrés.
+    // Il fonctionne avec le modèle Eloquent Village.
+    // Dans le but d'envoyer la liste complète des villages au format JSON.
+    // Pour régler l'alimentation des sélecteurs de villages d'origine dans le formulaire.
     public function index(): JsonResponse
     {
         return response()->json(Village::all());
     }
 
-    // Enregistre un nouveau village. VillageRequest a déjà vérifié le nom
-    // et l'existence réelle de la tribu avant que cette méthode ne s'exécute.
+    // Ce code sert à créer une nouvelle entité village en base de données.
+    // Il fonctionne avec les données validées par VillageRequest (nom, tribu_id).
+    // Dans le but d'insérer l'enregistrement et d'envoyer une réponse HTTP 201.
+    // Pour régler l'extension locale de l'arborescence des villages.
     public function store(VillageRequest $request): JsonResponse
     {
         $village = Village::create($request->validated());
@@ -34,13 +39,19 @@ class VillageController extends Controller
         ], 201);
     }
 
-    // Renvoie un seul village : celui dont le numéro est indiqué dans l'adresse de la demande.
+    // Ce code sert à restituer les informations d'un village précis.
+    // Il fonctionne avec le modèle Village lié par l'identifiant URL.
+    // Dans le but de retourner la fiche du village au format JSON.
+    // Pour régler l'affichage du détail d'un village sélectionné.
     public function show(Village $village): JsonResponse
     {
         return response()->json($village);
     }
 
-    // Modifie un village existant (nom et/ou tribu), mêmes vérifications qu'à la création.
+    // Ce code sert à modifier les données d'un village existant.
+    // Il fonctionne avec l'instance ciblée de Village et les données validées de la requête.
+    // Dans le but de sauvegarder les changements et d'en informer le client.
+    // Pour régler la mise à jour des dénominations de villages.
     public function update(VillageRequest $request, Village $village): JsonResponse
     {
         $village->update($request->validated());
@@ -51,10 +62,10 @@ class VillageController extends Controller
         ]);
     }
 
-    // Supprime un village directement : rien ne dépend encore de lui dans la base.
-    // ATTENTION : quand la table des ressortissants existera et pointera vers les villages,
-    // il faudra ajouter ici la même vérification que dans les deux autres contrôleurs.
-    
+    // Ce code sert à effacer un village de la base de données.
+    // Il fonctionne avec l'instance sélectionnée du modèle Village.
+    // Dans le but d'exécuter la suppression de la ligne et renvoyer un statut 200.
+    // Pour régler le nettoyage des entités de village obsolètes.
     public function destroy(Village $village): JsonResponse
     {
         $village->delete();

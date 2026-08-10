@@ -131,6 +131,10 @@ const password = ref('');
 const isSubmitting = ref(false);
 const errorMessage = ref('');
 
+// Ce code sert à traiter la soumission du formulaire de connexion utilisateur.
+// Il fonctionne avec les variables réactives du formulaire, la bibliothèque Axios et le stockage local localStorage.
+// Dans le but d'interroger l'API '/api/login' pour authentifier le ressortissant ou l'admin et stocker les jetons.
+// Pour régler la connexion sécurisée et la redirection automatique selon le rôle.
 const handleLogin = async () => {
   isSubmitting.value = true;
   errorMessage.value = '';
