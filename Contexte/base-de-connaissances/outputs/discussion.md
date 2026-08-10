@@ -8,18 +8,11 @@ Fichier récapitulatif des décisions prises lors de la session d'échange (/gri
 
 * **Administrateur**
   * **Authentification** : Email + Mot de passe (Laravel Sanctum).
-  * **Rôle** : Supervision globale, gestion des comptes des Agents Recenseurs, administration du référentiel coutumier (Cantons, Tribus, Villages) et contrôle des imports ANStat.
+  * **Rôle** : Supervision globale, modération des fiches de recensement transmises (Valider / Rejeter avec motif motivé), administration du référentiel coutumier (Cantons, Tribus, Villages) et contrôle des imports ANStat via CLI.
 
-* **Agent Recenseur**
-  * **Authentification** : Email + Mot de passe.
-  * **Rôle** : Saisie et vérification des fiches de recensement des ressortissants sur le terrain ou aux guichets.
-
-* **Ressortissant (Auto-recensement)**
-  * **Authentification** : Numéro de téléphone (avec code postal / indicatif pays) + Mot de passe.
-  * **Rôle** : S'inscrire en ligne, remplir et consulter sa propre fiche de recensement ainsi que ses résidences.
-
-* **Ressortissant (Recensé par un Agent)**
-  * **Fonctionnement** : Fiche créée sur le terrain par l'agent. Si un numéro de téléphone est fourni, un compte rattaché à son numéro peut être généré ou activé ultérieurement.
+* **Ressortissant / Citoyen**
+  * **Authentification** : Email / Numéro de téléphone + Mot de passe (Laravel Sanctum).
+  * **Rôle** : S'inscrire en ligne sur l'espace citoyen, remplir et mettre à jour sa propre fiche de recensement individuelle, télécharger ses pièces justificatives (CNI, Passeport, Extrait, Justificatif de domicile), déclarer son adresse de résidence (nationale ou Diaspora avec Consulat) et suivre le statut de modération de sa fiche (`en_attente`, `valide`, `rejete`).
 
 ---
 
@@ -60,15 +53,15 @@ Fichier récapitulatif des décisions prises lors de la session d'échange (/gri
 ## 4. Synthèse des Modules Fonctionnels de l'API Backend
 
 1. **Authentification & Gestion des Rôles (RBAC)** :
-   * Connexion hybride (Email pour Admin/Agent, Téléphone pour Citoyen/Ressortissant).
-   * Restreindre les droits d'accès et d'édition selon le rôle.
+   * Connexion sécurisée Sanctum (Email pour Administrateur, Email/Téléphone pour Citoyen/Ressortissant).
+   * Restreindre les droits d'accès et d'édition selon le rôle (Admin ou Citoyen).
 
 2. **Module Référentiel Administratif (ANStat)** :
    * Importation automatique des données officielles ANStat via `php artisan import:anstat`.
    * Routes de consultation (Read-only API).
 
 3. **Module Référentiel Coutumier** :
-   * Endpoints CRUD réservés aux Admins/Agents pour structurer et entretenir l'arbre coutumier (Cantons, Tribus, Villages).
+   * Endpoints CRUD réservés aux Administrateurs pour structurer et entretenir l'arbre coutumier (Cantons, Tribus, Villages).
 
 4. **Module Recensement des Ressortissants (Table Unique)** :
    * Saisie et gestion des fiches d'identité, de l'adresse de résidence (`pays`, `ville`, `quartier`, `adresse`), et du rattachement administratif dénormalisé (`district_id`, `region_id`, `departement_id`, `sous_prefecture_id`) ainsi que coutumier (`village_id`).

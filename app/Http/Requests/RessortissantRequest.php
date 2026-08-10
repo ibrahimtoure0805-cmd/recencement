@@ -21,20 +21,43 @@ class RessortissantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // Informations d'identité OBLIGATOIRES
-            'nom' => ['required', 'string', 'max:255'],
-            'prenom' => ['required', 'string', 'max:255'],
-            'sexe' => ['required', 'string', Rule::in(['M', 'F'])],
+            'code_suivi' => ['nullable', 'string', 'max:255'],
+            // Informations d'identité OBLIGATOIRES (ou parfois soumises lors d'une mise à jour partielle)
+            'nom' => ['sometimes', 'required', 'string', 'max:255'],
+            'prenom' => ['sometimes', 'required', 'string', 'max:255'],
+            'sexe' => ['sometimes', 'required', 'string', Rule::in(['M', 'F'])],
 
             // Adresse de résidence (pays obligatoire)
             'pays_id' => ['nullable', 'integer', 'exists:pays,id'],
-            'pays' => ['required', 'string', 'max:255'],
+            'pays' => ['sometimes', 'required', 'string', 'max:255'],
 
             // Informations d'identité FACULTATIVES (NULLABLE)
             'telephone' => ['nullable', 'string', 'max:255'],
             'date_naissance' => ['nullable', 'date', 'before_or_equal:today'],
             'lieu_naissance' => ['nullable', 'string', 'max:255'],
             'famille' => ['nullable', 'string', 'max:255'],
+            'profession' => ['nullable', 'string', 'max:255'],
+
+            // Pièces justificatives et Identité (NULLABLE)
+            'type_piece' => ['nullable', 'string', 'max:255'],
+            'numero_piece' => ['nullable', 'string', 'max:255'],
+            'document_identite' => ['nullable', 'file', 'mimes:pdf,jpg,jpeg,png', 'max:5120'],
+            'justificatif_domicile' => ['nullable', 'file', 'mimes:pdf,jpg,jpeg,png', 'max:5120'],
+
+            // Rattachement Diaspora & Référent (NULLABLE)
+            'consulat_rattachement' => ['nullable', 'string', 'max:255'],
+            'contact_referent_nom' => ['nullable', 'string', 'max:255'],
+            'contact_referent_telephone' => ['nullable', 'string', 'max:255'],
+
+            // Informations sociodémographiques (NULLABLE)
+            'situation_matrimoniale' => ['nullable', 'string', Rule::in(['celibataire', 'marie', 'divorce', 'veuf'])],
+            'niveau_etude' => ['nullable', 'string', Rule::in(['aucun', 'primaire', 'secondaire', 'superieur'])],
+            'statut_occupation' => ['nullable', 'string', Rule::in(['chef_menage', 'epoux_epouse', 'enfant', 'autre_membre', 'membre_foyer', 'resident_temporaire', 'autre'])],
+            'village_nom' => ['nullable', 'string', 'max:255'],
+
+            // Modération & Gouvernance (NULLABLE / ENUM)
+            'statut_validation' => ['nullable', 'string', Rule::in(['en_attente', 'valide', 'rejete'])],
+            'motif_rejet' => ['nullable', 'string', 'max:500'],
 
             // Rattachement administratif (FACULTATIF / NULLABLE)
             'district_id' => ['nullable', 'integer', 'exists:districts,id'],
@@ -57,7 +80,7 @@ class RessortissantRequest extends FormRequest
                 'nullable',
                 'integer',
                 'exists:users,id',
-                Rule::unique('ressortissants', 'user_id')->ignore($this->ressortissant?->id ?? $this->route('ressortissant')),
+                Rule::unique('ressortissants', 'user_id')->ignore($this->route('ressortissant')),
             ],
         ];
     }
@@ -72,7 +95,7 @@ class RessortissantRequest extends FormRequest
             }
         }
 
-        foreach (['nom', 'prenom', 'telephone', 'lieu_naissance', 'famille', 'pays', 'ville', 'quartier', 'adresse'] as $champ) {
+        foreach (['nom', 'prenom', 'telephone', 'lieu_naissance', 'famille', 'profession', 'type_piece', 'numero_piece', 'consulat_rattachement', 'contact_referent_nom', 'contact_referent_telephone', 'situation_matrimoniale', 'niveau_etude', 'statut_occupation', 'pays', 'ville', 'quartier', 'adresse', 'motif_rejet'] as $champ) {
             if ($this->has($champ) && $this->input($champ) !== null) {
                 $this->merge([$champ => trim((string) $this->input($champ))]);
             }
@@ -80,6 +103,14 @@ class RessortissantRequest extends FormRequest
 
         if ($this->has('sexe') && $this->input('sexe') !== null) {
             $this->merge(['sexe' => strtoupper(trim((string) $this->input('sexe')))]);
+        }
+
+        // Nettoyage des champs de fichiers s'ils ne contiennent pas un fichier téléversé valide
+        if ($this->has('document_identite') && ! $this->file('document_identite')) {
+            $this->offsetUnset('document_identite');
+        }
+        if ($this->has('justificatif_domicile') && ! $this->file('justificatif_domicile')) {
+            $this->offsetUnset('justificatif_domicile');
         }
     }
 }

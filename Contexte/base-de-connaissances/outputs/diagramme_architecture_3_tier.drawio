@@ -1,0 +1,99 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram id="diagram_3tier" name="Architecture 3-Tier Recensement">
+    <mxGraphModel dx="1036" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="ARCHITECTURE 3-TIER DÉCOUPLÉE — PLATAFORME DE RECENSEMENT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a237e;" parent="1" vertex="1">
+          <mxGeometry x="150" y="40" width="900" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="tier1_container" value="COUCHE 1 : PRÉSENTATION (FRONTEND SPA REACT)" style="swimlane;startSize=30;horizontal=1;fillColor=#e1f5fe;strokeColor=#0288d1;fontStyle=1;fontSize=14;fontColor=#01579b;whiteSpace=wrap;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="50" y="85" width="1100" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_nav" value="«Client Agent»&#xa;&lt;b&gt;Navigateur Web&lt;/b&gt;&#xa;--&#xa;Google Chrome / DevTools&#xa;Exécution du Bundle JS SPA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0288d1;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#01579b;" parent="tier1_container" vertex="1">
+          <mxGeometry x="40" y="45" width="250" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_react" value="«Framework SPA»&#xa;&lt;b&gt;React 18 / 19 (Vite Build)&lt;/b&gt;&#xa;--&#xa;• React Hooks (useState, useEffect)&#xa;• Client HTTP Axios (HTTPS)&#xa;• React Router v6/v7 Client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0288d1;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=6;fontColor=#01579b;" parent="tier1_container" vertex="1">
+          <mxGeometry x="330" y="45" width="340" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_ui" value="«Composants UI»&#xa;&lt;b&gt;Interfaces Utilisateurs&lt;/b&gt;&#xa;--&#xa;• Formulaire Recensement Citoyen&#xa;• Cascades Réactives (Districts ➔ SP)&#xa;• Console Modération Admin&#xa;• Styling Tailwind CSS v4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0288d1;fontSize=11;align=left;spacingLeft=10;verticalAlign=top;spacingTop=6;fontColor=#01579b;" parent="tier1_container" vertex="1">
+          <mxGeometry x="710" y="45" width="350" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="tier2_container" value="COUCHE 2 : LOGIQUE MÉTIER (BACKEND API REST LARAVEL)" style="swimlane;startSize=30;horizontal=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;fontStyle=1;fontSize=14;fontColor=#4a148c;whiteSpace=wrap;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="50" y="340" width="1100" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_routes" value="«API Router»&#xa;&lt;b&gt;routes/api.php&lt;/b&gt;&#xa;--&#xa;• Public (/districts, /stats)&#xa;• Protected (/valider, /rejeter)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7b1fa2;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#4a148c;" parent="tier2_container" vertex="1">
+          <mxGeometry x="40" y="45" width="220" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_sanctum" value="«Middleware Sécurité»&#xa;&lt;b&gt;Laravel Sanctum Auth&lt;/b&gt;&#xa;--&#xa;• Vérification Bearer Tokens&#xa;• Protection Modération Admin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7b1fa2;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#4a148c;" parent="tier2_container" vertex="1">
+          <mxGeometry x="290" y="45" width="220" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_ctrl" value="«API Controllers &amp; Requests»&#xa;&lt;b&gt;Contrôleurs REST &amp; Validation&lt;/b&gt;&#xa;--&#xa;• RessortissantController (CRUD, Valider, Rejeter)&#xa;• Form Requests (RessortissantRequest, CantonRequest)&#xa;• DistrictController, StatistiqueController, AuthController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7b1fa2;fontSize=11;align=left;spacingLeft=8;verticalAlign=top;spacingTop=6;fontColor=#4a148c;" parent="tier2_container" vertex="1">
+          <mxGeometry x="540" y="45" width="520" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_eloquent" value="«ORM Eloquent Models»&#xa;&lt;b&gt;10 Entités Métier (PHP 8.3+)&lt;/b&gt;&#xa;--&#xa;District, Region, Departement, SousPrefecture, Canton, Tribu, Village, Ressortissant, Pays, User" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7b1fa2;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#4a148c;" parent="tier2_container" vertex="1">
+          <mxGeometry x="40" y="160" width="670" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_cmd" value="«Artisan CLI Command»&#xa;&lt;b&gt;php artisan anstat:import&lt;/b&gt;&#xa;--&#xa;App\Console\Commands\ImportAnstat&#xa;Séquence descendante (Districts ➔ SP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7b1fa2;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#4a148c;" parent="tier2_container" vertex="1">
+          <mxGeometry x="740" y="160" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tier3_container" value="COUCHE 3 : PERSISTANCE &amp; INFRASTRUCTURE (SQLITE DEV / MYSQL PROD / STORAGE / ANSTAT)" style="swimlane;startSize=30;horizontal=1;fillColor=#e8f5e9;strokeColor=#388e3c;fontStyle=1;fontSize=14;fontColor=#1b5e20;whiteSpace=wrap;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="50" y="660" width="1100" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_db" value="«Relational Database Engine»&#xa;&lt;b&gt;SQLite (Dev) / MySQL (Prod)&lt;/b&gt;&#xa;--&#xa;• Schéma relationnel 3NF&#xa;• Contraintes Clés Étrangères (FK)&#xa;• Référentiel 526 Sous-Préfectures&#xa;• Fiches Citoyennes &amp; Modération" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#388e3c;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#1b5e20;" parent="tier3_container" vertex="1">
+          <mxGeometry x="40" y="45" width="330" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_storage" value="«File Storage»&#xa;&lt;b&gt;Stockage Disque Local&lt;/b&gt;&#xa;--&#xa;• /storage/app/public/documents&#xa;• Pièces d&#39;identité (CNI, Passeport)&#xa;• Justificatifs de domicile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#388e3c;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#1b5e20;" parent="tier3_container" vertex="1">
+          <mxGeometry x="410" y="45" width="300" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_anstat" value="«External REST Service»&#xa;&lt;b&gt;API Publique ANStat&lt;/b&gt;&#xa;--&#xa;• https://api-public.anstat.ci/api/v1&#xa;• Endpoints: districts, regions, departements, sous-prefectures&#xa;• Référentiel Officiel État de Côte d&#39;Ivoire" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#388e3c;fontSize=11;align=center;verticalAlign=top;spacingTop=6;fontColor=#1b5e20;" parent="tier3_container" vertex="1">
+          <mxGeometry x="740" y="45" width="320" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="link_t1_t2_1" value="«Requêtes HTTP/JSON (Axios)»" style="endArrow=classic;startArrow=classic;html=1;fontStyle=1;fontSize=11;fontColor=#01579b;strokeColor=#0288d1;strokeWidth=2;" parent="1" source="t1_react" target="t2_routes" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="280" />
+              <mxPoint x="220" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link_t1_t2_2" value="«Header Authorization: Bearer &lt;Sanctum_Token&gt;»" style="endArrow=classic;html=1;fontStyle=2;fontSize=10;fontColor=#4a148c;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" parent="1" source="t1_ui" target="t2_sanctum" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="885" y="310" />
+              <mxPoint x="550" y="310" />
+              <mxPoint x="490" y="310" />
+              <mxPoint x="440" y="310" />
+              <mxPoint x="380" y="320" />
+              <mxPoint x="340" y="340" />
+              <mxPoint x="350" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link_t2_t3_db" value="«Requêtes SQL / PDO Eloquent»" style="endArrow=classic;startArrow=classic;html=1;fontStyle=1;fontSize=11;fontColor=#1b5e20;strokeColor=#388e3c;strokeWidth=2;" parent="1" source="t2_eloquent" target="t3_db" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="255" y="635" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link_t2_t3_storage" value="«Lecture / Écriture Fichiers Storage»" style="endArrow=classic;startArrow=classic;html=1;fontStyle=1;fontSize=10;fontColor=#1b5e20;strokeColor=#388e3c;strokeWidth=1.5;dashed=1;" parent="1" source="t2_ctrl" target="t3_storage" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="500" />
+              <mxPoint x="760" y="625" />
+              <mxPoint x="560" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link_t2_t3_anstat" value="«Appels HTTP GET Sync (updateOrCreate)»" style="endArrow=classic;html=1;fontStyle=1;fontSize=11;fontColor=#c62828;strokeColor=#c62828;strokeWidth=2;" parent="1" source="t2_cmd" target="t3_anstat" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="635" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

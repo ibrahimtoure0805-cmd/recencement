@@ -31,6 +31,11 @@ return new class extends Migration
             $table->date('date_naissance')->nullable();
             $table->string('lieu_naissance')->nullable();
             $table->string('famille')->nullable(); // Nom de famille ou groupe familial
+            $table->string('profession')->nullable(); // Statut ou activité socio-professionnelle
+
+            // Statut de modération et gouvernance
+            $table->enum('statut_validation', ['en_attente', 'valide', 'rejete'])->default('en_attente');
+            $table->string('motif_rejet')->nullable();
 
             // Rattachement administratif (Champs NULLABLES)
             $table->foreignId('district_id')->nullable()->constrained('districts')->nullOnDelete();

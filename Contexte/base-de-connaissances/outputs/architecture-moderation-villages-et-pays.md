@@ -12,13 +12,13 @@ Lors du recensement d'un ressortissant ivoirien :
 2. **Structures coutumières** : Pas d'API nationale existante pour les Cantons, Tribus et Villages coutumiers.
 3. **Le problème de la saisie libre des villages** :
    - Un administrateur ne peut pas saisir 8 000+ villages à la main avant le lancement.
-   - Si les ressortissants ou agents écrivent le nom d'un village manuellement, les variations de casse, d'espaces et d'accents (ex : `"Kiémou"`, `"kiemou "`, `"KIEMOU"`, `"Kiémoun"`) provoquent des doublons dangereux et polluent la base de données.
+   - Si les ressortissants écrivent le nom d'un village manuellement, les variations de casse, d'espaces et d'accents (ex : `"Kiémou"`, `"kiemou "`, `"KIEMOU"`, `"Kiémoun"`) provoquent des doublons dangereux et polluent la base de données.
 
 ---
 
 ## 2. Solution d'Architecture Retenue : Modération Participative avec Validation Administrative
 
-### A. Côté Utilisateur / Agent de Recensement (Frontend)
+### A. Côté Ressortissant / Citoyen (Frontend)
 - **Règles de nettoyage à la saisie (Normalisation)** :
   - Suppression des espaces au début/fin (`trim`).
   - Passage en minuscules (`strtolower`).

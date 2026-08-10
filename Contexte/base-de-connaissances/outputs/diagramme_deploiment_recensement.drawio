@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" modified="2026-08-07T23:30:00.000Z" agent="Gemini/Antigravity IDE" version="21.6.8" type="device">
+  <diagram id="diagram_1" name="Diagramme de Déploiement B&amp;W React">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Diagramme de Déploiement - Plateforme de Recensement des Ressortissants" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry as="geometry" x="150" y="15" width="800" height="30" />
+        </mxCell>
+        <mxCell id="node_client" value="«device»&#10;Navigateur Web (Client)&#10;--&#10;Interface Utilisateur&#10;React 19 (Vite SPA)" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=10;html=1;shape=cube;whiteSpace=wrap;size=12;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry as="geometry" x="320" y="70" width="280" height="110" />
+        </mxCell>
+        <mxCell id="node_web" value="«execution environment»&#10;Serveur Web &amp; Application&#10;(Nginx / Apache + PHP 8.3+)&#10;--&#10;API REST Laravel&#10;(Sanctum Auth)" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=10;html=1;shape=cube;whiteSpace=wrap;size=12;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry as="geometry" x="80" y="250" width="280" height="120" />
+        </mxCell>
+        <mxCell id="node_db" value="«database»&#10;Serveur BD&#10;(SQLite / MySQL)&#10;--&#10;Tables &amp; Index 3NF" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=10;html=1;shape=cube;whiteSpace=wrap;size=12;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry as="geometry" x="80" y="450" width="260" height="110" />
+        </mxCell>
+        <mxCell id="node_storage" value="«device»&#10;Stockage Fichiers&#10;(Disk local / Storage)&#10;--&#10;Pièces justificatives" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=10;html=1;shape=cube;whiteSpace=wrap;size=12;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry as="geometry" x="400" y="450" width="260" height="110" />
+        </mxCell>
+        <mxCell id="node_anstat" value="«external system»&#10;Service Externe ANStat&#10;(api-public.anstat.ci)&#10;--&#10;Découpage Administratif Officiel" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=10;html=1;shape=cube;whiteSpace=wrap;size=12;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry as="geometry" x="560" y="250" width="280" height="120" />
+        </mxCell>
+        <mxCell id="e_client_web" value="«HTTPS / Axios JSON»" style="endArrow=none;html=1;fontStyle=2;fontSize=10;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1" source="node_client" target="node_web">
+          <mxGeometry as="geometry" x="0" y="0" width="100" height="50" relative="1" />
+        </mxCell>
+        <mxCell id="e_web_db" value="«PDO / Requêtes SQL»" style="endArrow=none;html=1;fontStyle=2;fontSize=10;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1" source="node_web" target="node_db">
+          <mxGeometry as="geometry" x="0" y="0" width="100" height="50" relative="1" />
+        </mxCell>
+        <mxCell id="e_web_storage" value="«Upload / Lecture»" style="endArrow=none;html=1;fontStyle=2;fontSize=10;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1" source="node_web" target="node_storage">
+          <mxGeometry as="geometry" x="0" y="0" width="100" height="50" relative="1" />
+        </mxCell>
+        <mxCell id="e_web_anstat" value="«HTTPS / Sync CLI»" style="endArrow=none;html=1;fontStyle=2;fontSize=10;fontColor=#000000;strokeColor=#000000;" parent="1" edge="1" source="node_web" target="node_anstat">
+          <mxGeometry as="geometry" x="0" y="0" width="100" height="50" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

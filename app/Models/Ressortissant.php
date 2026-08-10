@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Ressortissant extends Model
 {
     protected $fillable = [
+        'code_suivi',
         'user_id',
         'nom',
         'prenom',
@@ -21,6 +22,19 @@ class Ressortissant extends Model
         'date_naissance',
         'lieu_naissance',
         'famille',
+        'profession',
+        'type_piece',
+        'numero_piece',
+        'document_identite_path',
+        'justificatif_domicile_path',
+        'consulat_rattachement',
+        'contact_referent_nom',
+        'contact_referent_telephone',
+        'situation_matrimoniale',
+        'niveau_etude',
+        'statut_occupation',
+        'statut_validation',
+        'motif_rejet',
         'district_id',
         'region_id',
         'departement_id',
@@ -28,6 +42,7 @@ class Ressortissant extends Model
         'canton_id',
         'tribu_id',
         'village_id',
+        'village_nom',
         'pays_id',
         'pays',
         'ville',
@@ -38,6 +53,59 @@ class Ressortissant extends Model
     protected $casts = [
         'date_naissance' => 'date',
     ];
+
+    protected $appends = [
+        'document_identite_url',
+        'justificatif_domicile_url',
+    ];
+
+    protected $attributes = [
+        'statut_validation' => 'en_attente',
+    ];
+
+    /**
+     * URL publique du document d'identité uploadé.
+     */
+    public function getDocumentIdentiteUrlAttribute(): ?string
+    {
+        return $this->document_identite_path
+            ? asset('storage/' . $this->document_identite_path)
+            : null;
+    }
+
+    /**
+     * URL publique du justificatif de domicile uploadé.
+     */
+    public function getJustificatifDomicileUrlAttribute(): ?string
+    {
+        return $this->justificatif_domicile_path
+            ? asset('storage/' . $this->justificatif_domicile_path)
+            : null;
+    }
+
+    /**
+     * Scope pour filtrer les fiches validées.
+     */
+    public function scopeValides($query)
+    {
+        return $query->where('statut_validation', 'valide');
+    }
+
+    /**
+     * Scope pour filtrer les fiches en attente de modération.
+     */
+    public function scopeEnAttente($query)
+    {
+        return $query->where('statut_validation', 'en_attente');
+    }
+
+    /**
+     * Scope pour filtrer les ressortissants résidant à l'étranger (Diaspora).
+     */
+    public function scopeDiaspora($query)
+    {
+        return $query->where('pays', '!=', 'Côte d\'Ivoire');
+    }
 
     /**
      * Le compte utilisateur associé (optionnel).

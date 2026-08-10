@@ -34,6 +34,13 @@ class RessortissantObserver
      */
     public function saving(Ressortissant $ressortissant): void
     {
+        // 0. Génération automatique du code de suivi unique (ex: REC-2026-X8K92)
+        if (empty($ressortissant->code_suivi)) {
+            $year = date('Y');
+            $rand = strtoupper(\Illuminate\Support\Str::random(5));
+            $ressortissant->code_suivi = "REC-{$year}-{$rand}";
+        }
+
         // 1. Si le village n'a pas été modifié ou changé, on n'a rien à recalculer.
         if (! $ressortissant->isDirty('village_id')) {
             return;

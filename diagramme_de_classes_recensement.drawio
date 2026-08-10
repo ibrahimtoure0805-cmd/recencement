@@ -1,0 +1,70 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram id="diagram_1" name="Diagramme de Classes Figure V.9">
+    <mxGraphModel dx="1036" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c_district" value="District&#xa;--&#xa;+id: Int&#xa;+codeDistrict: String&#xa;+nomDistrict: String&#xa;+annee: Int&#xa;--&#xa;+listerRegions()&#xa;+ajouterRegion()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="30" y="30" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_region" value="Region&#xa;--&#xa;+id: Int&#xa;+codeRegion: String&#xa;+nomRegion: String&#xa;+annee: Int&#xa;--&#xa;+listerDepartements()&#xa;+ajouterDepartement()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="270" y="30" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_departement" value="Departement&#xa;--&#xa;+id: Int&#xa;+codeDepartement: String&#xa;+nomDepartement: String&#xa;+annee: Int&#xa;--&#xa;+listerSousPrefectures()&#xa;+ajouterSousPrefecture()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="510" y="30" width="190" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sp" value="SousPrefecture&#xa;--&#xa;+id: Int&#xa;+anstatId: Int&#xa;+codeSousPrefecture: String&#xa;+nomSousPrefecture: String&#xa;+annee: Int&#xa;--&#xa;+listerCantons()&#xa;+listerRessortissants()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="760" y="30" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="c_canton" value="Canton&#xa;--&#xa;+id: Int&#xa;+nom: String&#xa;--&#xa;+listerTribus()&#xa;+ajouterTribu()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="30" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tribu" value="Tribu&#xa;--&#xa;+id: Int&#xa;+nom: String&#xa;--&#xa;+listerVillages()&#xa;+ajouterVillage()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="240" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="c_village" value="Village&#xa;--&#xa;+id: Int&#xa;+nom: String&#xa;--&#xa;+listerRessortissants()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="450" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_utilisateur" value="Utilisateur&#xa;--&#xa;+id: Int&#xa;+nom: String&#xa;+email: String&#xa;+motDePasse: String&#xa;+emailVerifieLe: DateTime&#xa;--&#xa;+seConnecter()&#xa;+seDeconnecter()&#xa;+creerFicheRecensement()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="380" y="440" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pays" value="Pays&#xa;--&#xa;+id: Int&#xa;+nom: String&#xa;+codeIso: String&#xa;+estParDefault: Boolean&#xa;--&#xa;+listerResidents()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="380" y="660" width="180" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ressortissant" value="Ressortissant&#xa;--&#xa;+id: Int&#xa;+nom: String&#xa;+prenom: String&#xa;+telephone: String&#xa;+sexe: String&#xa;+dateNaissance: Date&#xa;+lieuNaissance: String&#xa;+famille: String&#xa;+profession: String&#xa;+statutValidation: String&#xa;+motifRejet: String&#xa;+paysResidence: String&#xa;+ville: String&#xa;+quartier: String&#xa;+adresse: String&#xa;--&#xa;+enregistrerFiche()&#xa;+modifierFiche()&#xa;+validerFiche()&#xa;+rejeterFiche()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="660" y="380" width="220" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="r_dist_reg" value="+Englober&#xa;1 --- 1..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_district" target="c_region" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_reg_dep" value="+Regrouper&#xa;1 --- 1..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_region" target="c_departement" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_dep_sp" value="+Comprendre&#xa;1 --- 1..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_departement" target="c_sp" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_sp_canton" value="+Héberger&#xa;1 --- 0..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_sp" target="c_canton" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_canton_tribu" value="+Rassembler&#xa;1 --- 0..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_canton" target="c_tribu" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_tribu_village" value="+Composer&#xa;1 --- 1..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_tribu" target="c_village" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_village_res" value="+Associer&#xa;0..1 --- 0..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_village" target="c_ressortissant" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_sp_res" value="+Rattacher&#xa;1 --- 1..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_sp" target="c_ressortissant" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_user_res" value="+Détenir&#xa;1 --- 0..1" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_utilisateur" target="c_ressortissant" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_pays_res" value="+Localiser&#xa;1 --- 1..*" style="endArrow=open;html=1;endSize=8;startArrow=none;strokeColor=#000000;fontColor=#000000;" parent="1" source="c_pays" target="c_ressortissant" edge="1">
+          <mxGeometry width="100" height="50" relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram id="diagram_table_specs" name="Tableau Spécifications Matérielles">
+    <mxGraphModel dx="1036" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="960" pageHeight="400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="table_title" value="Tableau VI.1 — Spécifications techniques du poste de développement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#1f3864;" parent="1" vertex="1">
+          <mxGeometry x="200" y="328" width="850" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="th_comp" value="Composant" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontStyle=1;fontSize=13;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="50" y="70" width="260" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="th_specs" value="Caractéristiques &amp; Spécifications" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1f3864;strokeColor=#1f3864;fontColor=#ffffff;fontStyle=1;fontSize=13;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="310" y="70" width="590" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="r1_c1" value="Processeur (CPU)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=1;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="50" y="115" width="260" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r1_c2" value="Intel® Core™ i5 (12ᵉ génération) à 1.30 GHz (jusqu&#39;à 4.40 GHz Turbo)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=0;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="310" y="115" width="590" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r2_c1" value="Mémoire vive (RAM)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f2f5f9;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=1;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="50" y="157" width="260" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r2_c2" value="12 Go DDR4" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f2f5f9;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=0;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="310" y="157" width="590" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r3_c1" value="Stockage principal" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=1;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="50" y="199" width="260" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r3_c2" value="SSD NVMe de 512 Go" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=0;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="310" y="199" width="590" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r4_c1" value="Système d&#39;exploitation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f2f5f9;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=1;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="50" y="241" width="260" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r4_c2" value="Microsoft Windows 11 Édition 64 bits" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f2f5f9;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=0;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="310" y="241" width="590" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="r5_c1" value="Navigateur de test" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=1;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="50" y="283" width="260" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="r5_c2" value="Google Chrome (version stable) avec Chrome DevTools / React Developer Tools" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d9d9d9;fontColor=#000000;fontStyle=0;fontSize=11;align=left;spacingLeft=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="310" y="283" width="590" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
