@@ -16,6 +16,11 @@ class Canton extends Model
     protected $fillable = [
         'nom',
         'sous_prefecture_id',
+        'is_defaut',
+    ];
+
+    protected $casts = [
+        'is_defaut' => 'boolean',
     ];
 
     // Ce code sert à définir la sous-préfecture administrative parente du canton.

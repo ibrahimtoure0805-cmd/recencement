@@ -1,14 +1,20 @@
-// Ce code sert à tester les fonctionnalités de l'API de gestion des ressortissants.
-// Il fonctionne avec le framework Pest / PHPUnit et le trait RefreshDatabase de Laravel.
-// Dans le but de s'assurer de la validité de la création, la modération et les agrégations statistiques des ressortissants.
-// Pour régler la prévention des régressions fonctionnelles sur les endpoints API.
+<?php
+
+use App\Models\Ressortissant;
+use App\Models\User;
+use Database\Seeders\RolesAndPermissionsSeeder;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Laravel\Sanctum\Sanctum;
 
 uses(RefreshDatabase::class);
 
+beforeEach(function () {
+    $this->seed(RolesAndPermissionsSeeder::class);
+});
+
 // Ce code sert à valider la création d'un ressortissant et son statut initial.
-// Il fonctionne en envoyant une requête POST à '/api/ressortissants' et en contrôlant la base de données.
-// Dans le but de s'assurer que le statut 'en_attente' et la profession sont correctement enregistrés.
-// Pour régler la fiabilité de l'inscription citoyenne.
 test('peut créer un ressortissant avec sa profession et son statut par défaut', function () {
     $response = $this->postJson('/api/ressortissants', [
         'nom' => 'Kouadio',
@@ -30,11 +36,12 @@ test('peut créer un ressortissant avec sa profession et son statut par défaut'
     ]);
 });
 
-// Ce code sert à tester la validation administrateur d'un dossier.
-// Il fonctionne en simulant un appel PATCH sur '/api/ressortissants/{id}/valider'.
-// Dans le but de vérifier que le statut de validation passe à 'valide'.
-// Pour régler le contrôle qualité du workflow de modération.
+// Ce code sert à tester la validation administrateur d'un dossier avec Sanctum.
 test('un administrateur peut valider une fiche de recensement', function () {
+    $admin = User::factory()->create();
+    $admin->assignRole('super_admin');
+    Sanctum::actingAs($admin);
+
     $ressortissant = Ressortissant::create([
         'nom' => 'Touré',
         'prenom' => 'Ibrahim',
@@ -54,11 +61,12 @@ test('un administrateur peut valider une fiche de recensement', function () {
     ]);
 });
 
-// Ce code sert à vérifier la procédure de rejet d'une fiche avec motif.
-// Il fonctionne avec un appel PATCH sur '/api/ressortissants/{id}/rejeter' accompagné d'un motif.
-// Dans le but de s'assurer que le statut devient 'rejete' et le motif sauvegardé.
-// Pour régler la traçabilité des motifs de refus.
+// Ce code sert à vérifier la procédure de rejet d'une fiche avec motif par un administrateur.
 test('un administrateur peut rejeter une fiche de recensement avec motif', function () {
+    $admin = User::factory()->create();
+    $admin->assignRole('super_admin');
+    Sanctum::actingAs($admin);
+
     $ressortissant = Ressortissant::create([
         'nom' => 'Koffi',
         'prenom' => 'Jean',
@@ -76,11 +84,12 @@ test('un administrateur peut rejeter une fiche de recensement avec motif', funct
         ->assertJsonPath('ressortissant.motif_rejet', 'Document d\'identité illisible.');
 });
 
-// Ce code sert à vérifier l'exactitude des réponses de l'API des statistiques.
-// Il fonctionne en peuplant 3 ressortissants de test puis en interrogeant '/api/stats/globales'.
-// Dans le but de contrôler la justesse des calculs et totaux retournés.
-// Pour régler la fiabilité des informations statistiques fournies aux décideurs.
+// Ce code sert à vérifier l'exactitude des réponses de l'API des statistiques pour les décideurs.
 test('les endpoints de statistiques renvoient les données d agrégation correctes', function () {
+    $admin = User::factory()->create();
+    $admin->assignRole('super_admin');
+    Sanctum::actingAs($admin);
+
     // 2 ressortissants locaux validés, 1 en attente diaspora
     Ressortissant::create([
         'nom' => 'Yao', 'prenom' => 'Paul', 'sexe' => 'M', 'pays' => 'Côte d\'Ivoire', 'statut_validation' => 'valide', 'type_piece' => 'CNI', 'situation_matrimoniale' => 'marie'
@@ -105,13 +114,10 @@ test('les endpoints de statistiques renvoient les données d agrégation correct
 });
 
 // Ce code sert à tester l'envoi multipart d'une fiche avec téléversement de fichier.
-// Il fonctionne avec Storage::fake() et UploadedFile::fake() de Laravel.
-// Dans le but de contrôler l'enregistrement physique et la mise à jour des chemins en BDD.
-// Pour régler la validation du téléversement sécurisé de pièces justificatives.
 test('peut créer un ressortissant de la diaspora avec pièces justificatives uploadées', function () {
-    \Illuminate\Support\Facades\Storage::fake('public');
+    Storage::fake('public');
 
-    $file = \Illuminate\Http\UploadedFile::fake()->create('cni.pdf', 500, 'application/pdf');
+    $file = UploadedFile::fake()->create('cni.pdf', 500, 'application/pdf');
 
     $response = $this->postJson('/api/ressortissants', [
         'nom' => 'Bamba',
@@ -137,5 +143,5 @@ test('peut créer un ressortissant de la diaspora avec pièces justificatives up
     expect($ressortissant)->not->toBeNull();
     expect($ressortissant->document_identite_path)->not->toBeNull();
 
-    \Illuminate\Support\Facades\Storage::disk('public')->assertExists($ressortissant->document_identite_path);
+    Storage::disk('public')->assertExists($ressortissant->document_identite_path);
 });

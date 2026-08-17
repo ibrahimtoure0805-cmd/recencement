@@ -30,12 +30,12 @@ Thumbs.db
 .*.drawio.bkp
 *.exe
 
-# Exclusions specifiques projet / contexte / documents
+# Exclusions specifiques projet / contexte / documents / exports
 /Contexte/
+/outputs/
 *.docx
+*.pdf
+*.png
+DOCUMENTATION_LARAVEL_PERMISSION.md
 StarUML-Setup.exe
 .env.example
-
-
-
-

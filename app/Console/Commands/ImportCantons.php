@@ -41,7 +41,7 @@ class ImportCantons extends Command
 
         $this->info("Début de l'importation des cantons depuis database/data/cantons.json...");
 
-        $count = 0;
+        $specificCount = 0;
         // On parcourt chaque élément du tableau $cantonsData pour extraire le canton et rechercher sa sous-préfecture
         foreach ($cantonsData as $item) {
             $nom = trim((string) $item['nom']);
@@ -55,13 +55,34 @@ class ImportCantons extends Command
 
             Canton::updateOrCreate(
                 ['nom' => $nom],
-                ['sous_prefecture_id' => $sp?->id]
+                [
+                    'sous_prefecture_id' => $sp?->id,
+                    'is_defaut' => false,
+                ]
             );
 
-            $count++;
+            $specificCount++;
         }
 
-        $this->info("Importation terminée avec succès : {$count} cantons importés et reliés aux sous-préfectures.");
+        // Pour chaque sous-préfecture n'ayant aucun canton associé, créer un canton par défaut (is_defaut = true)
+        $fallbackCount = 0;
+        $allSp = SousPrefecture::all();
+        foreach ($allSp as $sp) {
+            if (! Canton::where('sous_prefecture_id', $sp->id)->exists()) {
+                Canton::updateOrCreate(
+                    [
+                        'nom' => $sp->nom_sp,
+                        'sous_prefecture_id' => $sp->id,
+                    ],
+                    [
+                        'is_defaut' => true,
+                    ]
+                );
+                $fallbackCount++;
+            }
+        }
+
+        $this->info("Importation terminée avec succès : {$specificCount} cantons spécifiques importés et {$fallbackCount} cantons de repli créés.");
 
         return self::SUCCESS;
     }

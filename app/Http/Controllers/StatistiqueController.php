@@ -4,20 +4,25 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Models\Canton;
+use App\Models\Departement;
+use App\Models\District;
+use App\Models\Pays;
+use App\Models\Region;
 use App\Models\Ressortissant;
+use App\Models\SousPrefecture;
+use App\Models\Tribu;
+use App\Models\User;
+use App\Models\Village;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 
-// Ce code sert à fournir des données agrégées et statistiques pour les tableaux de bord.
-// Il fonctionne avec le modèle Ressortissant et des requêtes SQL d'agrégation.
-// Dans le but de donner une vue synthétique de la population recensée (locaux vs diaspora, par sexe, par canton).
-// Pour régler la centralisation des calculs d'indicateurs de recensement.
+// Ce code sert à fournir des données agrégées et statistiques calculées en temps réel sur la base de données.
+// Il fonctionne avec le modèle Ressortissant, les tables de référentiels et des requêtes SQL d'agrégation.
+// Dans le but de donner une vue décisionnelle exacte de la population recensée et du maillage territorial.
 class StatistiqueController extends Controller
 {
-    // Ce code sert à calculer les indicateurs globaux de la plateforme de recensement.
-    // Il fonctionne avec la table des ressortissants en effectuant des requêtes d'agrégation groupées.
-    // Dans le but de fournir les totaux par statut de validation, sexe, type de pièce, situation matrimoniale et niveau d'étude.
-    // Pour régler la restitution synthétique des données au niveau national.
+    // Indicateurs démographiques et de conformité globaux calculés depuis la BDD
     public function globales(): JsonResponse
     {
         $total = Ressortissant::count();
@@ -34,18 +39,21 @@ class StatistiqueController extends Controller
 
         $parPiece = Ressortissant::query()
             ->whereNotNull('type_piece')
+            ->where('type_piece', '!=', '')
             ->select('type_piece', DB::raw('COUNT(*) as total'))
             ->groupBy('type_piece')
             ->pluck('total', 'type_piece');
 
         $parSituationMatrimoniale = Ressortissant::query()
             ->whereNotNull('situation_matrimoniale')
+            ->where('situation_matrimoniale', '!=', '')
             ->select('situation_matrimoniale', DB::raw('COUNT(*) as total'))
             ->groupBy('situation_matrimoniale')
             ->pluck('total', 'situation_matrimoniale');
 
         $parNiveauEtude = Ressortissant::query()
             ->whereNotNull('niveau_etude')
+            ->where('niveau_etude', '!=', '')
             ->select('niveau_etude', DB::raw('COUNT(*) as total'))
             ->groupBy('niveau_etude')
             ->pluck('total', 'niveau_etude');
@@ -56,13 +64,13 @@ class StatistiqueController extends Controller
         return response()->json([
             'total_ressortissants' => $total,
             'statuts' => [
-                'valide' => $parStatut['valide'] ?? 0,
-                'en_attente' => $parStatut['en_attente'] ?? 0,
-                'rejete' => $parStatut['rejete'] ?? 0,
+                'valide' => (int) ($parStatut['valide'] ?? 0),
+                'en_attente' => (int) ($parStatut['en_attente'] ?? 0),
+                'rejete' => (int) ($parStatut['rejete'] ?? 0),
             ],
             'repartition_sexe' => [
-                'M' => $parSexe['M'] ?? 0,
-                'F' => $parSexe['F'] ?? 0,
+                'M' => (int) ($parSexe['M'] ?? 0),
+                'F' => (int) ($parSexe['F'] ?? 0),
             ],
             'repartition_geographique' => [
                 'local' => $localCount,
@@ -71,13 +79,21 @@ class StatistiqueController extends Controller
             'repartition_piece_identite' => $parPiece,
             'repartition_situation_matrimoniale' => $parSituationMatrimoniale,
             'repartition_niveau_etude' => $parNiveauEtude,
+            'referentiels' => [
+                'districts' => District::count(),
+                'regions' => Region::count(),
+                'departements' => Departement::count(),
+                'sous_prefectures' => SousPrefecture::count(),
+                'cantons' => Canton::count(),
+                'tribus' => Tribu::count(),
+                'villages' => Village::count(),
+                'pays' => Pays::count(),
+                'users' => User::count(),
+            ]
         ]);
     }
 
-    // Ce code sert à calculer la répartition de la population vivant à l'étranger.
-    // Il fonctionne avec le scope diaspora() et agrège les données par pays de résidence et par consulat.
-    // Dans le but de transmettre le top des pays d'accueil et des consulats de rattachement.
-    // Pour régler le suivi statistique des ressortissants hors du territoire national.
+    // Répartition de la population vivant à l'étranger
     public function diaspora(): JsonResponse
     {
         $parPays = Ressortissant::diaspora()
@@ -89,6 +105,7 @@ class StatistiqueController extends Controller
 
         $parConsulat = Ressortissant::diaspora()
             ->whereNotNull('consulat_rattachement')
+            ->where('consulat_rattachement', '!=', '')
             ->select('consulat_rattachement', DB::raw('COUNT(*) as total'))
             ->groupBy('consulat_rattachement')
             ->orderByDesc('total')
@@ -97,15 +114,13 @@ class StatistiqueController extends Controller
 
         return response()->json([
             'total_diaspora' => Ressortissant::diaspora()->count(),
+            'total_pays_referentiel' => Pays::count(),
             'repartition_par_pays' => $parPays,
             'repartition_par_consulat' => $parConsulat,
         ]);
     }
 
-    // Ce code sert à mesurer le niveau de rattachement aux cantons et villages d'origine.
-    // Il fonctionne avec des requêtes de jointure entre les ressortissants et les tables cantons et villages.
-    // Dans le but de faire ressortir les cantons et villages comptant le plus grand nombre d'inscrits.
-    // Pour régler le besoin d'analyse démographique et coutumière du territoire.
+    // Statistiques territoriales et coutumières (Cantons, Tribus, Villages d'origine)
     public function coutumier(): JsonResponse
     {
         $parCanton = Ressortissant::query()
@@ -125,6 +140,10 @@ class StatistiqueController extends Controller
             ->get();
 
         return response()->json([
+            'total_cantons' => Canton::count(),
+            'total_tribus' => Tribu::count(),
+            'total_villages' => Village::count(),
+            'total_sous_prefectures' => SousPrefecture::count(),
             'top_cantons' => $parCanton,
             'top_villages' => $parVillage,
         ]);

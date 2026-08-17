@@ -33,19 +33,11 @@ Route::get('/tribus/{tribu}', [TribuController::class, 'show']);
 Route::get('/villages', [VillageController::class, 'index']);
 Route::get('/villages/{village}', [VillageController::class, 'show']);
 
-// --- Référentiel des Pays & Statistiques publiques ---
+// --- Référentiel des Pays ---
 Route::get('/pays', [PaysController::class, 'index']);
-
-Route::prefix('stats')->group(function () {
-    Route::get('/globales', [StatistiqueController::class, 'globales']);
-    Route::get('/diaspora', [StatistiqueController::class, 'diaspora']);
-    Route::get('/coutumier', [StatistiqueController::class, 'coutumier']);
-});
 
 // --- Inscription / Soumission publique d'une fiche citoyenne ---
 Route::post('/ressortissants', [RessortissantController::class, 'store']);
-Route::get('/ressortissants', [RessortissantController::class, 'index']);
-Route::get('/ressortissants/{ressortissant}', [RessortissantController::class, 'show']);
 
 // --- Espace Sécurisé (Authentification requise via Laravel Sanctum) ---
 Route::middleware('auth:sanctum')->group(function () {
@@ -55,6 +47,20 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    // Fiche citoyenne propre de l'utilisateur connecté
+    Route::get('/ressortissant/me', [RessortissantController::class, 'monDossier']);
+
+    // Statistiques confidentielles (Reservées Super Admin)
+    Route::middleware('can:stats:view')->prefix('stats')->group(function () {
+        Route::get('/globales', [StatistiqueController::class, 'globales']);
+        Route::get('/diaspora', [StatistiqueController::class, 'diaspora']);
+        Route::get('/coutumier', [StatistiqueController::class, 'coutumier']);
+    });
+
+    // Modération & Consultation des Ressortissants
+    Route::get('/ressortissants', [RessortissantController::class, 'index']);
+    Route::get('/ressortissants/{ressortissant}', [RessortissantController::class, 'show']);
 
     // Console de Modération des Ressortissants
     Route::patch('/ressortissants/{ressortissant}/valider', [RessortissantController::class, 'valider']);

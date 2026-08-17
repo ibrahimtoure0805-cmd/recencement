@@ -30,6 +30,7 @@ class CantonSeeder extends Seeder
             return;
         }
 
+        $specificCount = 0;
         foreach ($cantonsData as $item) {
             $nom = trim($item['nom']);
             $spNom = trim($item['sous_prefecture_nom'] ?? '');
@@ -41,10 +42,32 @@ class CantonSeeder extends Seeder
 
             Canton::updateOrCreate(
                 ['nom' => $nom],
-                ['sous_prefecture_id' => $sp?->id]
+                [
+                    'sous_prefecture_id' => $sp?->id,
+                    'is_defaut' => false,
+                ]
             );
+            $specificCount++;
         }
 
-        $this->command->info("Importation terminée : " . count($cantonsData) . " cantons importés depuis JSON.");
+        // Pour chaque sous-préfecture n'ayant aucun canton associé, créer un canton par défaut (is_defaut = true)
+        $fallbackCount = 0;
+        $allSp = SousPrefecture::all();
+        foreach ($allSp as $sp) {
+            if (! Canton::where('sous_prefecture_id', $sp->id)->exists()) {
+                Canton::updateOrCreate(
+                    [
+                        'nom' => $sp->nom_sp,
+                        'sous_prefecture_id' => $sp->id,
+                    ],
+                    [
+                        'is_defaut' => true,
+                    ]
+                );
+                $fallbackCount++;
+            }
+        }
+
+        $this->command->info("Importation terminée : {$specificCount} cantons spécifiques importés et {$fallbackCount} cantons de repli créés pour les sous-préfectures sans canton.");
     }
 }
